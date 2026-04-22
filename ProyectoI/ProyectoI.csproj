@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MyDbContext\" />
+    <Folder Include="RestauranteDbContext\" />
   </ItemGroup>
 
 </Project>

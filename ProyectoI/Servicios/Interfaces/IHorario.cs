@@ -4,7 +4,7 @@ namespace ProyectoI.Servicios.Interfaces
     public interface IHorario
     {
         //reads
-        public List<Horario> GetHorarioList();
+        public List<Horario> GetAllHorario();
         public Horario GetHorarioById(int id);
         public Horario GetHorarioByName(string name);
         public Horario GetHorarioBydiaSemana (string diaSemana);

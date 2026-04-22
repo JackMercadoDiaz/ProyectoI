@@ -1,6 +1,6 @@
 ﻿namespace ProyectoI.Servicios
 {
-    public class HorarioServicios
+    public class HorarioServicios 
     {
     }
 }

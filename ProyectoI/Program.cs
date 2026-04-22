@@ -1,3 +1,5 @@
+using ProyectoI.Servicios.Interfaces;
+using ProyectoI.Servicios;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

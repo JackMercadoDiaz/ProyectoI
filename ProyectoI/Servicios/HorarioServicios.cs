@@ -4,17 +4,17 @@ namespace ProyectoI.Servicios
 {
     public class HorarioServicios : IHorario
     {
-        public Horario CreateHorario(Horario horario)
+        public Horario createHorario(Horario horario)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteHorario(int horarioId)
+        public void deleteHorario(int horarioId)
         {
             throw new NotImplementedException();
         }
 
-        public Horario GetHorarioBydiaSemana(string diaSemana)
+        public List<Horario> GetAllHorario()
         {
             throw new NotImplementedException();
         }
@@ -29,12 +29,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public List<Horario> GetAllHorario()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Horario UpdateHorario(int horarioId, Horario horario)
+        public Horario updateHorario(int horarioId, Horario horario)
         {
             throw new NotImplementedException();
         }

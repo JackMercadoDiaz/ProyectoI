@@ -4,12 +4,12 @@ namespace ProyectoI.Servicios
 {
     public class ReservaServicios : IReserva
     {
-        public Reserva CreateReserva(Reserva reserva)
+        public Reserva createReserva(Reserva reserva)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteReserva(int reservaId)
+        public void deleteReserva(int reservaId)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +24,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Reserva GetReservaMesaId(int reservaMesaId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Reserva UpdateReserva(int reservaId, Reserva reserva)
+        public Reserva updateReserva(int reservaId, Reserva reserva)
         {
             throw new NotImplementedException();
         }

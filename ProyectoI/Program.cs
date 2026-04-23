@@ -16,6 +16,9 @@ builder.Services.AddScoped<IZona, ZonaServicios>();
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+
+
 
 var app = builder.Build();
 

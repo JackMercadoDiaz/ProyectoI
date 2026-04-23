@@ -4,7 +4,17 @@ namespace ProyectoI.Servicios
 {
     public class ZonaServicios : IZona
     {
-        public List<Zona> GetZonas()
+        public Zona createZona(Zona zona)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteZona(int zonaId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Zona> GetAllZonas()
         {
             throw new NotImplementedException();
         }
@@ -14,17 +24,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public void AddZona(Zona zona)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateZona(Zona zona)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteZona(int id)
+        public Zona UpdateZona(int zonaId, Zona zona)
         {
             throw new NotImplementedException();
         }

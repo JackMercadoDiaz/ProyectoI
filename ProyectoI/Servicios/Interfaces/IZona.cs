@@ -3,10 +3,10 @@ namespace ProyectoI.Servicios.Interfaces
 {
     public interface IZona
     {
-        List<Zona> GetZonas();
-         Zona GetZonaById(int id);
-         void AddZona(Zona zona);
-         void UpdateZona(Zona zona);
-         void DeleteZona(int id);
+         public List<Zona> GetAllZonas ();
+         public Zona GetZonaById (int id);
+         public Zona createZona (Zona zona);
+         public Zona UpdateZona (int zonaId,Zona zona);
+         public void DeleteZona(int zonaId);
     }
 }

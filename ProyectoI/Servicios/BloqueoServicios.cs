@@ -9,7 +9,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public void DeleteBloqueo(int bloqueoIdo)
+        public void deleteBloqueo(int bloqueoIdo)
         {
             throw new NotImplementedException();
         }
@@ -19,12 +19,12 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public List<Bloqueo> GetBloqueos()
+        public List<Bloqueo> GetAllBloqueos()
         {
             throw new NotImplementedException();
         }
 
-        public Bloqueo UpdateBloqueo(int bloqueIdo, Bloqueo bloqueo)
+        public Bloqueo updateBloqueo(int bloqueIdo, Bloqueo bloqueo)
         {
             throw new NotImplementedException();
         }

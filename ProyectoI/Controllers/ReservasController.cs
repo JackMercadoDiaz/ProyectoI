@@ -35,7 +35,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Reserva Post([FromBody] Reserva newReserva)
         {
-            var result = _reservaService.CreateReserva(newReserva);
+            var result = _reservaService.createReserva(newReserva);
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Reserva Put(int id, [FromBody] Reserva updateReserva)
         {
-            var result = _reservaService.UpdateReserva(id, updateReserva);
+            var result = _reservaService.updateReserva(id, updateReserva);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _reservaService.DeleteReserva(id);
+            _reservaService.deleteReserva(id);
         }
     }
 }

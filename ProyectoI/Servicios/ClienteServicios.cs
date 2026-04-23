@@ -1,30 +1,36 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
+
 namespace ProyectoI.Servicios
 {
-    public class SeccionServicios : ISeccion
+    public class ClienteServicios : ICliente
     {
-        public Seccion createSeccion(Seccion seccion)
+        public Cliente createCliente(Cliente cliente)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteSeccion(int SeccionId)
+        public void deleteClienteById(int clienteId)
         {
             throw new NotImplementedException();
         }
 
-        public List<Seccion> GetAllSecciones()
+        public List<Cliente> GetAllClientes()
         {
             throw new NotImplementedException();
         }
 
-        public Seccion GetSeccionById(int SeccionId)
+        public Cliente GetClienteById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Seccion updateSeccion(int SeccionId, Seccion seccion)
+        public Cliente GetClienteByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Cliente updateCliente(int id, Cliente cliente)
         {
             throw new NotImplementedException();
         }

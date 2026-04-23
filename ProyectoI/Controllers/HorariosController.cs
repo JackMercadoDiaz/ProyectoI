@@ -37,18 +37,11 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-        [HttpGet()]
-        public Horario GetHorario(string diaSemana)
-        {
-            var result = _horarioService.GetHorarioBydiaSemana(diaSemana);
-            return result;
-        }
-
         // POST api/<HorariosController>
         [HttpPost]
         public Horario Post([FromBody] Horario newHorario)
         {
-            var result = _horarioService.CreateHorario(newHorario);
+            var result = _horarioService.createHorario(newHorario);
             return result;
         }
 
@@ -56,7 +49,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Horario Put(int id, [FromBody] Horario updateHorario)
         {
-            var result = _horarioService.UpdateHorario(id, updateHorario);
+            var result = _horarioService.updateHorario(id, updateHorario);
             return result;
         }
 
@@ -64,7 +57,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _horarioService.DeleteHorario(id);
+            _horarioService.deleteHorario(id);
         }
     }
 }

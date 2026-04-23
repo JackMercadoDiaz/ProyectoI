@@ -9,7 +9,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public void DeleteZona(int zonaId)
+        public void deleteZona(int zonaId)
         {
             throw new NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Zona UpdateZona(int zonaId, Zona zona)
+        public Zona updateZona(int zonaId, Zona zona)
         {
             throw new NotImplementedException();
         }

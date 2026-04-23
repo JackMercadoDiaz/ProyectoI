@@ -1,27 +1,30 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
-
 namespace ProyectoI.Servicios
 {
     public class BloqueoServicios : IBloqueo
     {
-        public List<Bloqueo> GetBloqueos()
+        public Bloqueo createBloqueo(Bloqueo bloqueo)
         {
             throw new NotImplementedException();
         }
+
+        public void DeleteBloqueo(int bloqueoIdo)
+        {
+            throw new NotImplementedException();
+        }
+
         public Bloqueo GetBloqueoById(int id)
         {
             throw new NotImplementedException();
         }
-        public void AddBloqueo(Bloqueo bloqueo)
+
+        public List<Bloqueo> GetBloqueos()
         {
             throw new NotImplementedException();
         }
-        public void UpdateBloqueo(Bloqueo bloqueo)
-        {
-            throw new NotImplementedException();
-        }
-        public void DeleteBloqueo(int id)
+
+        public Bloqueo UpdateBloqueo(int bloqueIdo, Bloqueo bloqueo)
         {
             throw new NotImplementedException();
         }

@@ -29,7 +29,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Reserva UpdateReserva(int reservaI, Reserva reserva)
+        public Reserva UpdateReserva(int reservaId, Reserva reserva)
         {
             throw new NotImplementedException();
         }

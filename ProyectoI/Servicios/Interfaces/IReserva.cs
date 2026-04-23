@@ -10,7 +10,7 @@ namespace ProyectoI.Servicios.Interfaces
         public Reserva GetReservaMesaId (int reservaMesaId);
         //writes
         public Reserva CreateReserva (Reserva reserva);
-        public Reserva UpdateReserva (int reservaI, Reserva reserva);
+        public Reserva UpdateReserva (int reservaId, Reserva reserva);
         public void DeleteReserva (int reservaId);
     }
 }

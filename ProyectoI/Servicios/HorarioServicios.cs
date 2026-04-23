@@ -1,4 +1,4 @@
-﻿using ProyectoI.Entidades;
+using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {

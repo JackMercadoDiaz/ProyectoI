@@ -2,29 +2,29 @@
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {
-    public class SeccionServicios : ISeccion
+    public class ReservaServicios : IReserva
     {
-        public Seccion createSeccion(Seccion seccion)
+        public Reserva createReserva(Reserva reserva)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteSeccion(int SeccionId)
+        public void deleteReserva(int reservaId)
         {
             throw new NotImplementedException();
         }
 
-        public List<Seccion> GetAllSecciones()
+        public List<Reserva> GetAllReservas()
         {
             throw new NotImplementedException();
         }
 
-        public Seccion GetSeccionById(int SeccionId)
+        public Reserva GetReservaById(int reservaId)
         {
             throw new NotImplementedException();
         }
 
-        public Seccion updateSeccion(int SeccionId, Seccion seccion)
+        public Reserva updateReserva(int reservaId, Reserva reserva)
         {
             throw new NotImplementedException();
         }

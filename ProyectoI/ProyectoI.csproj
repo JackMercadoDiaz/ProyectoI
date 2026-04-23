@@ -8,10 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MyDbContext\" />
+    <Folder Include="RestauranteDbContext\" />
+    <Folder Include="Servicios\Implementaciones\" />
   </ItemGroup>
 
 </Project>

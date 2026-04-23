@@ -2,29 +2,29 @@
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {
-    public class SeccionServicios : ISeccion
+    public class ZonaServicios : IZona
     {
-        public Seccion createSeccion(Seccion seccion)
+        public Zona createZona(Zona zona)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteSeccion(int SeccionId)
+        public void deleteZona(int zonaId)
         {
             throw new NotImplementedException();
         }
 
-        public List<Seccion> GetAllSecciones()
+        public List<Zona> GetAllZonas()
         {
             throw new NotImplementedException();
         }
 
-        public Seccion GetSeccionById(int SeccionId)
+        public Zona GetZonaById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Seccion updateSeccion(int SeccionId, Seccion seccion)
+        public Zona updateZona(int zonaId, Zona zona)
         {
             throw new NotImplementedException();
         }

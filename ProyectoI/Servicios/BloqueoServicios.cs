@@ -2,29 +2,29 @@
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {
-    public class SeccionServicios : ISeccion
+    public class BloqueoServicios : IBloqueo
     {
-        public Seccion createSeccion(Seccion seccion)
+        public Bloqueo createBloqueo(Bloqueo bloqueo)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteSeccion(int SeccionId)
+        public void deleteBloqueo(int bloqueoIdo)
         {
             throw new NotImplementedException();
         }
 
-        public List<Seccion> GetAllSecciones()
+        public Bloqueo GetBloqueoById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Seccion GetSeccionById(int SeccionId)
+        public List<Bloqueo> GetAllBloqueos()
         {
             throw new NotImplementedException();
         }
 
-        public Seccion updateSeccion(int SeccionId, Seccion seccion)
+        public Bloqueo updateBloqueo(int bloqueIdo, Bloqueo bloqueo)
         {
             throw new NotImplementedException();
         }

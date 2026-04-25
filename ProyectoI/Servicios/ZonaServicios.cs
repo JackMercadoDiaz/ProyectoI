@@ -1,32 +1,48 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
+using ProyectoI.RestauranteDbContext;
+
 namespace ProyectoI.Servicios
 {
     public class ZonaServicios : IZona
     {
+        private readonly ResturanteDbContext _RestauranteDbcontext;
+        public ZonaServicios(ResturanteDbContext restauranteDbContext)
+        {
+            _RestauranteDbcontext = restauranteDbContext;
+        }
         public Zona createZona(Zona zona)
         {
-            throw new NotImplementedException();
+            _RestauranteDbcontext.Zonas.Add(zona);
+            _RestauranteDbcontext.SaveChanges();
+            return zona;
         }
 
-        public void deleteZona(int zonaId)
+        public void deleteZona(int ZonaId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            _RestauranteDbcontext.Zonas.Remove(result);
+            _RestauranteDbcontext.SaveChanges();
         }
 
         public List<Zona> GetAllZonas()
         {
-            throw new NotImplementedException();
+            return _RestauranteDbcontext.Zonas.ToList();
         }
 
-        public Zona GetZonaById(int id)
+        public Zona GetZonaById(int ZonaId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            return result;
         }
 
-        public Zona updateZona(int zonaId, Zona zona)
+        public Zona updateZona(int ZonaId, Zona zona)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            result.zonaId = zona.zonaId;
+            _RestauranteDbcontext.Zonas.Update(result);
+            _RestauranteDbcontext.SaveChanges();
+            return result;
         }
     }
 }

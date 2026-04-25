@@ -10,7 +10,8 @@ namespace ProyectoI.RestauranteDbContext
             optionsBuilder.UseInMemoryDatabase("ResturanteDbTest");
         }
         // DbSet para cada entidad
-        public DbSet<Horario> Horarios { get; set; }
-        public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Horario> Horarios { get; set; } // Agregado DbSet para Horarios 
+        public DbSet<Reserva> Reservas { get; set; } 
+
     }
 }

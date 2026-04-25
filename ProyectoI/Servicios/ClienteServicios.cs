@@ -2,9 +2,9 @@
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {
-    public class ClientesServicios : IClientes
+    public class ClienteServicios : IClientes
     {
-        public Clientes CreateCliente(Clientes cliente)
+        public Cliente CreateCliente(Cliente cliente)
         {
             throw new NotImplementedException();
         }
@@ -14,17 +14,17 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public List<Clientes> GetAllClientes()
+        public List<Cliente> GetAllClientes()
         {
             throw new NotImplementedException();
         }
 
-        public Clientes GetCliente(int ClienteId)
+        public Cliente GetCliente(int ClienteId)
         {
             throw new NotImplementedException();
         }
 
-        public Clientes UpdateCliente(int ClienteId, Clientes cliente)
+        public Cliente UpdateCliente(int ClienteId, Cliente cliente)
         {
             throw new NotImplementedException();
         }

@@ -2,7 +2,7 @@
 {
     public class Mesa
     {
-        public int id { get; set; }
+        public int mesaId { get; set; }
         public string numMesa { get; set; }
         public int capacidad { get; set; }
         public int zonaId { get; set; }

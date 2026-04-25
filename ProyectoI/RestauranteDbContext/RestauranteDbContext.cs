@@ -17,5 +17,6 @@ namespace ProyectoI.RestauranteDbContext
         public DbSet<Zona> Zonas { get; set; }
         public DbSet <Mesa> Mesas { get; set; }
         public DbSet<ListaDeEspera> ListaDeEsperas { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

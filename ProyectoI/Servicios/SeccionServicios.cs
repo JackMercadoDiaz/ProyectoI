@@ -1,32 +1,52 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
+using ProyectoI.RestauranteDbContext;
+
 namespace ProyectoI.Servicios
 {
     public class SeccionServicios : ISeccion
     {
-        public Seccion createSeccion(Seccion seccion)
+
+        private readonly ResturanteDbContext _RestauranteDbcontext;
+        public SeccionServicios(ResturanteDbContext restauranteDbContext)
         {
-            throw new NotImplementedException();
+            _RestauranteDbcontext = restauranteDbContext;
         }
 
-        public void deleteSeccion(int SeccionId)
+
+        public Seccion createSeccion(Seccion seccion)
         {
-            throw new NotImplementedException();
+            _RestauranteDbcontext.Secciones.Add(seccion);
+            _RestauranteDbcontext.SaveChanges();
+            return seccion;
+        }
+
+        public void deleteSeccion(int seccionId)
+        {
+            var result = _RestauranteDbcontext.Secciones.Find(seccionId);
+            _RestauranteDbcontext.Secciones.Remove(result);
+            _RestauranteDbcontext.SaveChanges();
         }
 
         public List<Seccion> GetAllSecciones()
         {
-            throw new NotImplementedException();
+            return _RestauranteDbcontext.Secciones.ToList();
         }
 
-        public Seccion GetSeccionById(int SeccionId)
+        public Seccion GetSeccionById(int seccionId)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Secciones.Find(seccionId);
+            return result;
         }
 
-        public Seccion updateSeccion(int SeccionId, Seccion seccion)
+        public Seccion updateSeccion(int seccionId, Seccion seccion)
         {
-            throw new NotImplementedException();
+            var result = _RestauranteDbcontext.Secciones.Find(seccionId);
+            result.seccionId = seccion.seccionId;
+            _RestauranteDbcontext.Secciones.Update(result);
+            _RestauranteDbcontext.SaveChanges();
+            return result;
+
         }
     }
 }

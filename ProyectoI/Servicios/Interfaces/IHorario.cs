@@ -6,7 +6,6 @@ namespace ProyectoI.Servicios.Interfaces
         //reads
         public List<Horario> GetAllHorario();
         public Horario GetHorarioById(int id);
-        public Horario GetHorarioByName(string name);
         //writes
         public Horario createHorario(Horario horario);
         public Horario updateHorario(int horarioId, Horario horario);

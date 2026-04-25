@@ -31,11 +31,6 @@ namespace ProyectoI.Controllers
             return result;
         }
         [HttpGet()]
-        public Horario Get(string name)
-        {
-            var result = _horarioService.GetHorarioByName(name);
-            return result;
-        }
 
         // POST api/<HorariosController>
         [HttpPost]

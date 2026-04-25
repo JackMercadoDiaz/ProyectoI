@@ -11,6 +11,7 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
+
         public Reserva createReserva(Reserva reserva)
         {
             _RestauranteDbcontext.Reservas.Add(reserva);
@@ -39,7 +40,7 @@ namespace ProyectoI.Servicios
         public Reserva updateReserva(int reservaId, Reserva reserva)
         {
             var result = _RestauranteDbcontext.Reservas.Find(reservaId);
-            result.clienteId = reserva.clienteId;
+            result.reservaId = reserva.reservaId;
             _RestauranteDbcontext.Reservas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

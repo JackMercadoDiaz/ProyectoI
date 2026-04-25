@@ -2,7 +2,7 @@
 using ProyectoI.Servicios.Interfaces;
 namespace ProyectoI.Servicios
 {
-    public class MesaService : IMesa
+    public class MesaServicios : IMesa
     {
         public Mesa CreateMesa(Mesa mesa)
         {

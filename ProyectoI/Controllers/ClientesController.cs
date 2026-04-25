@@ -10,8 +10,8 @@ namespace ProyectoI.Controllers
     [ApiController]
     public class ClientesController : ControllerBase
     {
-        private readonly ICliente _clienteService;
-           public ClientesController(ICliente clienteService)
+        private readonly IClientes _clienteService;
+        public ClientesController(IClientes clienteService)
         {
             _clienteService = clienteService;
         }
@@ -32,11 +32,6 @@ namespace ProyectoI.Controllers
             return result;
         }
         [HttpGet()]
-        public Cliente Get(string name)
-        {
-            var result = _clienteService.GetClienteByName(name);
-            return result;
-        }
 
         // POST api/<ClientesController>
         [HttpPost]
@@ -58,7 +53,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _clienteService.deleteClienteById(id);
+            _clienteService.deleteCliente(id);
         }
     }
 }

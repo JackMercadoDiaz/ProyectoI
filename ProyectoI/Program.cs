@@ -1,5 +1,4 @@
-
-using ProyectoI.Entidades;
+using ProyectoI.RestauranteDbContext;
 using ProyectoI.Servicios;
 using ProyectoI.Servicios.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
@@ -7,17 +6,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container. Nuestras interfaces y servicios
 builder.Services.AddScoped<IReserva, ReservaServicios>();
 builder.Services.AddScoped<IHorario, HorarioServicios>();
-builder.Services.AddScoped<ICliente, ClienteServicios>();
+builder.Services.AddScoped<IClientes, ClienteServicios>();
 builder.Services.AddScoped<IBloqueo, BloqueoServicios>();
 builder.Services.AddScoped<ISeccion, SeccionServicios>();
 builder.Services.AddScoped<IZona, ZonaServicios>();
+builder.Services.AddScoped<IMesa, MesaServicios>();
+builder.Services.AddScoped<IListaDeEspera, ListaDeEsperaServicios>();
 
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-
-
 
 
 var app = builder.Build();

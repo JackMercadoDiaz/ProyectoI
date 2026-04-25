@@ -3,7 +3,7 @@ using ProyectoI.Servicios.Interfaces;
 
 namespace ProyectoI.Servicios
 {
-    public class ListaDeEsperaService : IListaDeEspera
+    public class ListaDeEsperaServicios : IListaDeEspera
     {
         public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera)
         {

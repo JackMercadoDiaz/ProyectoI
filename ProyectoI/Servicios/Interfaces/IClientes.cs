@@ -3,10 +3,10 @@ namespace ProyectoI.Servicios.Interfaces
 {
     public interface IClientes
     {
-        public List<Clientes> GetAllClientes();
-        public Clientes GetCliente(int ClienteId);
-        public Clientes CreateCliente(Clientes cliente);
-        public Clientes UpdateCliente(int ClienteId, Clientes cliente);
+        public List<Cliente> GetAllClientes();
+        public Cliente GetCliente(int ClienteId);
+        public Cliente CreateCliente(Cliente cliente);
+        public Cliente UpdateCliente(int ClienteId, Cliente cliente);
         public void DeleteCliente(int ClienteId);
     }
 }

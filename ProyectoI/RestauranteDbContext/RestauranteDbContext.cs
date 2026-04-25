@@ -7,7 +7,7 @@ namespace ProyectoI.RestauranteDbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase("ResturanteDbTest");
+            optionsBuilder.UseInMemoryDatabase("RestauranteDbTest");
         }
         // DbSet para cada entidad
         public DbSet<Horario> Horarios { get; set; }

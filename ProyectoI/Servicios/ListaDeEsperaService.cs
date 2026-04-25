@@ -29,5 +29,10 @@ namespace ProyectoI.Servicios
         {
             throw new NotImplementedException();
         }
+
+        public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

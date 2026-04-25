@@ -24,7 +24,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Mesa UpdateMesa(Mesa mesa)
+        public Mesa UpdateMesa(int id, Mesa mesa)
         {
             throw new NotImplementedException();
         }

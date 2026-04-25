@@ -12,5 +12,6 @@ namespace ProyectoI.RestauranteDbContext
         // DbSet para cada entidad
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Seccion> Secciones { get; set; }
     }
 }

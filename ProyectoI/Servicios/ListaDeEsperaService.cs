@@ -15,7 +15,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public List<ListaDeEspera> GetAllListasDeEspera()
+        public List<ListaDeEspera> GetAllListasDeEsperas()
         {
             throw new NotImplementedException();
         }

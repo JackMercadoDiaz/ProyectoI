@@ -7,7 +7,7 @@ namespace ProyectoI.Servicios.Interfaces
         public Mesa GetMesaById(int id);
 
         public Mesa CreateMesa(Mesa mesa);
-        public Mesa UpdateMesa(Mesa mesa);
+        public Mesa UpdateMesa(int id, Mesa mesa);
         void DeleteMesa(int id);
 
     }

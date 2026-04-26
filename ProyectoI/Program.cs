@@ -1,8 +1,10 @@
 using ProyectoI.RestauranteDbContext;
 using ProyectoI.Servicios;
 using ProyectoI.Servicios.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ResturanteDbContext>();
 // Add services to the container. Nuestras interfaces y servicios
 builder.Services.AddScoped<IReserva, ReservaServicios>();
 builder.Services.AddScoped<IHorario, HorarioServicios>();

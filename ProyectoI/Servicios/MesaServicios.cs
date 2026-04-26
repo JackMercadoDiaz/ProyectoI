@@ -7,7 +7,7 @@ namespace ProyectoI.Servicios
     public class MesaServicios : IMesa
     {
         private readonly ResturanteDbContext _RestauranteDbcontext;
-        public MesaService(ResturanteDbContext restauranteDbContext)
+        public MesaServicios(ResturanteDbContext restauranteDbContext)
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
@@ -39,7 +39,7 @@ namespace ProyectoI.Servicios
         public Mesa UpdateMesa(int mesaId, Mesa mesa)
         {
             var result = _RestauranteDbcontext.Mesas.Find(mesaId);
-            result.mesaId = mesa.mesaId;
+            result.MesaId = mesa.MesaId;
             _RestauranteDbcontext.Mesas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

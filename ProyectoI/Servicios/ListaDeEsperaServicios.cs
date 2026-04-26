@@ -7,7 +7,7 @@ namespace ProyectoI.Servicios
     public class ListaDeEsperaServicios : IListaDeEspera
     {
         private readonly ResturanteDbContext _RestauranteDbcontext;
-        public ListaDeEsperaService(ResturanteDbContext restauranteDbContext)
+        public ListaDeEsperaServicios(ResturanteDbContext restauranteDbContext)
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
@@ -39,7 +39,7 @@ namespace ProyectoI.Servicios
         public ListaDeEspera UpdateListaDeEspera(int listaDeEsperaId, ListaDeEspera listaDeEspera)
         {
             var result = _RestauranteDbcontext.ListaDeEsperas.Find(listaDeEsperaId);
-            result.listaDeEsperaId = listaDeEspera.listaDeEsperaId;
+            result.ListaDeEsperaId = listaDeEspera.ListaDeEsperaId;
             _RestauranteDbcontext.ListaDeEsperas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

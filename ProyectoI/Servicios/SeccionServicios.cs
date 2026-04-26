@@ -21,13 +21,6 @@ namespace ProyectoI.Servicios
             return seccion;
         }
 
-        public void DeleteSeccion(int seccionId)
-        {
-            var result = _RestauranteDbcontext.Secciones.Find(seccionId);
-            _RestauranteDbcontext.Secciones.Remove(result);
-            _RestauranteDbcontext.SaveChanges();
-        }
-
         public List<Seccion> GetAllSecciones()
         {
             return _RestauranteDbcontext.Secciones.ToList();
@@ -39,14 +32,6 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Seccion UpdateSeccion(int seccionId, Seccion seccion)
-        {
-            var result = _RestauranteDbcontext.Secciones.Find(seccionId);
-            result.SeccionId = seccion.SeccionId;
-            _RestauranteDbcontext.Secciones.Update(result);
-            _RestauranteDbcontext.SaveChanges();
-            return result;
-
-        }
+       
     }
 }

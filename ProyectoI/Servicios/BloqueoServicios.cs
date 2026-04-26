@@ -35,14 +35,13 @@ namespace ProyectoI.Servicios
             var result = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
             return result;
         }
-
-        public Bloqueo UpdateBloqueo(int bloqueId, Bloqueo bloqueo)
+        public bool VerificarBloqueo(int mesaId, DateTime fechaHora)
         {
-            var result = _RestauranteDbcontext.Bloqueos.Find(bloqueId);
-            result.BloqueoId = bloqueo.BloqueoId;
-            _RestauranteDbcontext.Bloqueos.Update(result);
-            _RestauranteDbcontext.SaveChanges();
-            return result;
+            return _RestauranteDbcontext.Bloqueos
+                .Any(b => b.MesaId == mesaId
+                && fechaHora >= b.FechaInicio
+                && fechaHora <= b.FechaFin
+                && b.Estado == "Activo");
         }
     }
-}
+} 

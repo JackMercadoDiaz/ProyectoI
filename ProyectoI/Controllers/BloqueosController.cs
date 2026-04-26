@@ -31,19 +31,19 @@ namespace ProyectoI.Controllers
             return result;
         }
 
+        //Get api/<BloqueosController>/verificar
+        [HttpGet("verificar")]
+        public bool VerificarBloqueo(int mesaId , DateTime fechaHora)
+        {
+           return _bloqueoService.VerificarBloqueo(mesaId, fechaHora);
+        }
+
+
         // POST api/<BloqueosController>
         [HttpPost]
         public Bloqueo Post([FromBody] Bloqueo newBloqueo)
         {
             var result = _bloqueoService.CreateBloqueo(newBloqueo);
-            return result;
-        }
-
-        // PUT api/<BloqueosController>/5
-        [HttpPut("{id}")]
-        public Bloqueo Put(int id, [FromBody] Bloqueo updateBloqueo)
-        {
-            var result = _bloqueoService.UpdateBloqueo(id, updateBloqueo);
             return result;
         }
 

@@ -6,7 +6,5 @@ namespace ProyectoI.Servicios.Interfaces
         public List<Seccion> GetAllSecciones();
         public Seccion GetSeccionById(int SeccionId);
         public Seccion CreateSeccion(Seccion seccion);
-        public Seccion UpdateSeccion(int SeccionId, Seccion seccion);
-        public void DeleteSeccion (int SeccionId);
     }
 }

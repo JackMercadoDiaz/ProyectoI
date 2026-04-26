@@ -39,19 +39,6 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-        // PUT api/<SeccionesController>/5
-        [HttpPut("{id}")]
-        public Seccion Put(int id, [FromBody] Seccion updateSeccion)
-        {
-            var result = _seccionService.UpdateSeccion(id, updateSeccion);
-            return result;
-        }
-
-        // DELETE api/<SeccionesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            _seccionService.DeleteSeccion(id);
-        }
+        
     }
 }

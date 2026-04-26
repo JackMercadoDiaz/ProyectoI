@@ -11,14 +11,14 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
-        public Bloqueo createBloqueo(Bloqueo bloqueo)
+        public Bloqueo CreateBloqueo(Bloqueo bloqueo)
         {
             _RestauranteDbcontext.Bloqueos.Add(bloqueo);
             _RestauranteDbcontext.SaveChanges();
             return bloqueo;
         }
 
-        public void deleteBloqueo(int bloqueoId)
+        public void DeleteBloqueo(int bloqueoId)
         {
             var result = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
             _RestauranteDbcontext.Bloqueos.Remove(result);
@@ -36,10 +36,10 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Bloqueo updateBloqueo(int bloqueId, Bloqueo bloqueo)
+        public Bloqueo UpdateBloqueo(int bloqueId, Bloqueo bloqueo)
         {
             var result = _RestauranteDbcontext.Bloqueos.Find(bloqueId);
-            result.bloqueoId = bloqueo.bloqueoId;
+            result.BloqueoId = bloqueo.BloqueoId;
             _RestauranteDbcontext.Bloqueos.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

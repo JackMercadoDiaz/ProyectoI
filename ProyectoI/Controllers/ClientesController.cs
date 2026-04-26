@@ -37,7 +37,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Cliente Post([FromBody] Cliente newCliente)
         {
-            var result = _clienteService.createCliente(newCliente);
+            var result = _clienteService.CreateCliente(newCliente);
             return result;
         }
 
@@ -45,7 +45,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Cliente Put(int id, [FromBody] Cliente updateCliente)
         {
-            var result = _clienteService.updateCliente(id, updateCliente);
+            var result = _clienteService.UpdateCliente(id, updateCliente);
             return result;
         }
 
@@ -53,7 +53,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _clienteService.deleteCliente(id);
+            _clienteService.DeleteCliente(id);
         }
     }
 }

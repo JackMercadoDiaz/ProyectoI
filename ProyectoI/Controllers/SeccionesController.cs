@@ -35,7 +35,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Seccion Post([FromBody] Seccion newSeccion)
         {
-            var result = _seccionService.createSeccion(newSeccion);
+            var result = _seccionService.CreateSeccion(newSeccion);
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Seccion Put(int id, [FromBody] Seccion updateSeccion)
         {
-            var result = _seccionService.updateSeccion(id, updateSeccion);
+            var result = _seccionService.UpdateSeccion(id, updateSeccion);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _seccionService.deleteSeccion(id);
+            _seccionService.DeleteSeccion(id);
         }
     }
 }

@@ -14,14 +14,14 @@ namespace ProyectoI.Servicios
         }
 
 
-        public Seccion createSeccion(Seccion seccion)
+        public Seccion CreateSeccion(Seccion seccion)
         {
             _RestauranteDbcontext.Secciones.Add(seccion);
             _RestauranteDbcontext.SaveChanges();
             return seccion;
         }
 
-        public void deleteSeccion(int seccionId)
+        public void DeleteSeccion(int seccionId)
         {
             var result = _RestauranteDbcontext.Secciones.Find(seccionId);
             _RestauranteDbcontext.Secciones.Remove(result);
@@ -39,10 +39,10 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Seccion updateSeccion(int seccionId, Seccion seccion)
+        public Seccion UpdateSeccion(int seccionId, Seccion seccion)
         {
             var result = _RestauranteDbcontext.Secciones.Find(seccionId);
-            result.seccionId = seccion.seccionId;
+            result.SeccionId = seccion.SeccionId;
             _RestauranteDbcontext.Secciones.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

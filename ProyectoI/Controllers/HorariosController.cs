@@ -36,7 +36,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Horario Post([FromBody] Horario newHorario)
         {
-            var result = _horarioService.createHorario(newHorario);
+            var result = _horarioService.CreateHorario(newHorario);
             return result;
         }
 
@@ -44,7 +44,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Horario Put(int id, [FromBody] Horario updateHorario)
         {
-            var result = _horarioService.updateHorario(id, updateHorario);
+            var result = _horarioService.UpdateHorario(id, updateHorario);
             return result;
         }
 
@@ -52,7 +52,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _horarioService.deleteHorario(id);
+            _horarioService.DeleteHorario(id);
         }
     }
 }

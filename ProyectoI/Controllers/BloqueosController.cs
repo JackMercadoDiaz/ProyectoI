@@ -35,7 +35,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Bloqueo Post([FromBody] Bloqueo newBloqueo)
         {
-            var result = _bloqueoService.createBloqueo(newBloqueo);
+            var result = _bloqueoService.CreateBloqueo(newBloqueo);
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Bloqueo Put(int id, [FromBody] Bloqueo updateBloqueo)
         {
-            var result = _bloqueoService.updateBloqueo(id, updateBloqueo);
+            var result = _bloqueoService.UpdateBloqueo(id, updateBloqueo);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {  
-            _bloqueoService.deleteBloqueo(id);
+            _bloqueoService.DeleteBloqueo(id);
         }
     }
 }

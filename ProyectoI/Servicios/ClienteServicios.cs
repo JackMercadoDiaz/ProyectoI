@@ -4,12 +4,12 @@ namespace ProyectoI.Servicios
 {
     public class ClienteServicios : IClientes
     {
-        public Cliente createCliente(Cliente cliente)
+        public Cliente CreateCliente(Cliente cliente)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteCliente(int ClienteId)
+        public void DeleteCliente(int ClienteId)
         {
             throw new NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Cliente updateCliente(int ClienteId, Cliente cliente)
+        public Cliente UpdateCliente(int ClienteId, Cliente cliente)
         {
             throw new NotImplementedException();
         }

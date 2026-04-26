@@ -12,14 +12,14 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext = restauranteDbContext;
         }
 
-        public Reserva createReserva(Reserva reserva)
+        public Reserva CreateReserva(Reserva reserva)
         {
             _RestauranteDbcontext.Reservas.Add(reserva);
             _RestauranteDbcontext.SaveChanges();
             return reserva;
         }
 
-        public void deleteReserva(int reservaId)
+        public void DeleteReserva(int reservaId)
         {
             var result = _RestauranteDbcontext.Reservas.Find(reservaId);
             _RestauranteDbcontext.Reservas.Remove(result);
@@ -37,10 +37,10 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Reserva updateReserva(int reservaId, Reserva reserva)
+        public Reserva UpdateReserva(int reservaId, Reserva reserva)
         {
             var result = _RestauranteDbcontext.Reservas.Find(reservaId);
-            result.reservaId = reserva.reservaId;
+            result.ReservaId = reserva.ReservaId;
             _RestauranteDbcontext.Reservas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

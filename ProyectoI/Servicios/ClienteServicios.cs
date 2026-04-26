@@ -19,7 +19,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public Cliente GetCliente(int ClienteId)
+        public Cliente GetClienteById(int ClienteId)
         {
             throw new NotImplementedException();
         }

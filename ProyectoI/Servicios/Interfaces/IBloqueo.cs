@@ -5,8 +5,8 @@ namespace ProyectoI.Servicios.Interfaces
     {
         public List<Bloqueo> GetAllBloqueos();
         public Bloqueo GetBloqueoById(int id);
-        public Bloqueo createBloqueo (Bloqueo bloqueo);
-        public Bloqueo updateBloqueo(int bloqueIdo,Bloqueo bloqueo);
-        public void deleteBloqueo(int bloqueoIdo);
+        public Bloqueo CreateBloqueo (Bloqueo bloqueo);
+        public Bloqueo UpdateBloqueo(int bloqueIdo,Bloqueo bloqueo);
+        public void DeleteBloqueo(int bloqueoIdo);
     }
 }

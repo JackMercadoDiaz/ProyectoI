@@ -4,10 +4,10 @@ namespace ProyectoI.Servicios.Interfaces
     public interface IMesa
     {
         public List<Mesa> GetAllMesas();
-        public Mesa GetMesaById(int mesaId);
-
+        public Mesa GetMesaById(int id);
         public Mesa CreateMesa(Mesa mesa);
-        public Mesa UpdateMesa(int mesaId, Mesa mesa);
-        void DeleteMesa(int mesaId);
+        public Mesa UpdateMesa(int id, Mesa mesa);
+        void DeleteMesa(int id);
+
     }
 }

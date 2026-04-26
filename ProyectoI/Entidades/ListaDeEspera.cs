@@ -2,13 +2,13 @@
 {
     public class ListaDeEspera
     {
-        public int listaDeEsperaId { get; set; }
-        public int clienteId { get; set; }
-        public int horarioId { get; set; }
-        public int zonaId { get; set; }
-        public string fecha { get; set; }
-        public int numPersonas { get; set; }
-        public bool estado { get; set; }
+        public int ListaDeEsperaId { get; set; }
+        public int ClienteId { get; set; }
+        public int HorarioId { get; set; }
+        public int ZonaId { get; set; }
+        public string Fecha { get; set; }
+        public int NumPersonas { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

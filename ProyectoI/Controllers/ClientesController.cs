@@ -10,8 +10,8 @@ namespace ProyectoI.Controllers
     [ApiController]
     public class ClientesController : ControllerBase
     {
-        private readonly ICliente _clienteService;
-           public ClientesController(ICliente clienteService)
+        private readonly IClientes _clienteService;
+        public ClientesController(IClientes clienteService)
         {
             _clienteService = clienteService;
         }
@@ -32,17 +32,12 @@ namespace ProyectoI.Controllers
             return result;
         }
         [HttpGet()]
-        public Cliente Get(string name)
-        {
-            var result = _clienteService.GetClienteByName(name);
-            return result;
-        }
 
         // POST api/<ClientesController>
         [HttpPost]
         public Cliente Post([FromBody] Cliente newCliente)
         {
-            var result = _clienteService.createCliente(newCliente);
+            var result = _clienteService.CreateCliente(newCliente);
             return result;
         }
 
@@ -50,7 +45,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Cliente Put(int id, [FromBody] Cliente updateCliente)
         {
-            var result = _clienteService.updateCliente(id, updateCliente);
+            var result = _clienteService.UpdateCliente(id, updateCliente);
             return result;
         }
 
@@ -58,7 +53,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _clienteService.deleteClienteById(id);
+            _clienteService.DeleteCliente(id);
         }
     }
 }

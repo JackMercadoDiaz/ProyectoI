@@ -4,7 +4,7 @@ using ProyectoI.RestauranteDbContext;
 
 namespace ProyectoI.Servicios
 {
-    public class MesaService : IMesa
+    public class MesaServicios : IMesa
     {
         private readonly ResturanteDbContext _RestauranteDbcontext;
         public MesaService(ResturanteDbContext restauranteDbContext)

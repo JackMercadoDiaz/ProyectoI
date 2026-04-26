@@ -4,7 +4,7 @@ using ProyectoI.RestauranteDbContext;
 
 namespace ProyectoI.Servicios
 {
-    public class ListaDeEsperaService : IListaDeEspera
+    public class ListaDeEsperaServicios : IListaDeEspera
     {
         private readonly ResturanteDbContext _RestauranteDbcontext;
         public ListaDeEsperaService(ResturanteDbContext restauranteDbContext)

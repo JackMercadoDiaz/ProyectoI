@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Zona> Get()
         {
-            var result = _zonasService.getAllZonas();
+            var result = _zonasService.GetAllZonas();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Zona Get(int id)
         {
-            var result = _zonasService.getZonaById(id);
+            var result = _zonasService.GetZonaById(id);
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Zona Post([FromBody] Zona newZona)
         {
-            var result = _zonasService.createZona(newZona);
+            var result = _zonasService.CreateZona(newZona);
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Zona Put(int id, [FromBody] Zona updateZona)
         {
-            var result = _zonasService.updateZona(id, updateZona);
+            var result = _zonasService.UpdateZona(id, updateZona);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _zonasService.deleteZona(id);
+            _zonasService.DeleteZona(id);
         }
     }
 }

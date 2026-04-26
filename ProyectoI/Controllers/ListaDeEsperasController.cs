@@ -21,7 +21,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<ListaDeEspera> Get()
         {
-            var result = _listaDeEsperaServicio.getAllListasDeEsperas();
+            var result = _listaDeEsperaServicio.GetAllListasDeEsperas();
             return result;
         }
 
@@ -29,7 +29,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public ListaDeEspera Get(int id)
         {
-            var result = _listaDeEsperaServicio.getListaDeEsperaById(id);
+            var result = _listaDeEsperaServicio.GetListaDeEsperaById(id);
             return result;
         }
 
@@ -37,7 +37,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public ListaDeEspera Post([FromBody] ListaDeEspera newListaDeEspera)
         {
-            var result = _listaDeEsperaServicio.createListaDeEspera(newListaDeEspera);
+            var result = _listaDeEsperaServicio.CreateListaDeEspera(newListaDeEspera);
             return result;
         }
 
@@ -45,7 +45,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public ListaDeEspera Put(int id, [FromBody] ListaDeEspera updatedListaDeEspera)
         {
-            var result = _listaDeEsperaServicio.updateListaDeEspera(id, updatedListaDeEspera);
+            var result = _listaDeEsperaServicio.UpdateListaDeEspera(id, updatedListaDeEspera);
             return result;
         }
 
@@ -53,7 +53,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _listaDeEsperaServicio.deleteListaDeEspera(id);
+            _listaDeEsperaServicio.DeleteListaDeEspera(id);
         }
     }
 }

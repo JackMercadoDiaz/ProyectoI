@@ -11,35 +11,35 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
-        public Zona createZona(Zona zona)
+        public Zona CreateZona(Zona zona)
         {
             _RestauranteDbcontext.Zonas.Add(zona);
             _RestauranteDbcontext.SaveChanges();
             return zona;
         }
 
-        public void deleteZona(int ZonaId)
+        public void DeleteZona(int ZonaId)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
             _RestauranteDbcontext.Zonas.Remove(result);
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Zona> getAllZonas()
+        public List<Zona> GetAllZonas()
         {
             return _RestauranteDbcontext.Zonas.ToList();
         }
 
-        public Zona getZonaById(int ZonaId)
+        public Zona GetZonaById(int ZonaId)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
             return result;
         }
 
-        public Zona updateZona(int ZonaId, Zona zona)
+        public Zona UpdateZona(int ZonaId, Zona zona)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
-            result.zonaId = zona.zonaId;
+            result.ZonaId = zona.ZonaId;
             _RestauranteDbcontext.Zonas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

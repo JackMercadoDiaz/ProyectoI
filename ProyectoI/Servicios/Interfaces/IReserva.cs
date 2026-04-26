@@ -5,11 +5,11 @@ namespace ProyectoI.Servicios.Interfaces
     public interface IReserva
     {
         //Reads
-        public List<Reserva> getAllReservas ();
-        public Reserva getReservaById (int reservaId);
+        public List<Reserva> GetAllReservas ();
+        public Reserva GetReservaById (int reservaId);
         //writes
-        public Reserva createReserva (Reserva reserva);
-        public Reserva updateReserva (int reservaId, Reserva reserva);
-        public void deleteReserva (int reservaId);
+        public Reserva CreateReserva (Reserva reserva);
+        public Reserva UpdateReserva (int reservaId, Reserva reserva);
+        public void DeleteReserva (int reservaId);
     }
 }

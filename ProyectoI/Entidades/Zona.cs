@@ -2,9 +2,9 @@
 {
     public class Zona
     {
-        public int zonaId { get; set; }
-        public string nombre { get; set; }
-        public int seccionId { get; set; }
+        public int ZonaId { get; set; }
+        public string Nombre { get; set; }
+        public int SeccionId { get; set; }
 
     }
 }

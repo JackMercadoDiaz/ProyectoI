@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Reserva> Get()
         {
-            var result = _reservaService.getAllReservas();
+            var result = _reservaService.GetAllReservas();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Reserva Get(int id)
         {
-            var result = _reservaService.getReservaById(id);
+            var result = _reservaService.GetReservaById(id);
             return result;
         }
 
@@ -35,7 +35,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Reserva Post([FromBody] Reserva newReserva)
         {
-            var result = _reservaService.createReserva(newReserva);
+            var result = _reservaService.CreateReserva(newReserva);
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Reserva Put(int id, [FromBody] Reserva updateReserva)
         {
-            var result = _reservaService.updateReserva(id, updateReserva);
+            var result = _reservaService.UpdateReserva(id, updateReserva);
             return result;
         }
 
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _reservaService.deleteReserva(id);
+            _reservaService.DeleteReserva(id);
         }
     }
 }

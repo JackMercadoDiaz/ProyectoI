@@ -10,35 +10,35 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = resturanteDbContext;
         }
-        public Horario createHorario(Horario horario)
+        public Horario CreateHorario(Horario horario)
         {
             _RestauranteDbcontext.Horarios.Add(horario);
             _RestauranteDbcontext.SaveChanges();
             return horario;
         }
 
-        public void deleteHorario(int horarioId)
+        public void DeleteHorario(int horarioId)
         {
             var result = _RestauranteDbcontext.Horarios.Find(horarioId);
             _RestauranteDbcontext.Horarios.Remove(result);
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Horario> getAllHorario()
+        public List<Horario> GetAllHorario()
         {
             return _RestauranteDbcontext.Horarios.ToList();
         }
 
-        public Horario getHorarioById(int id)
+        public Horario GetHorarioById(int id)
         {
             var result = _RestauranteDbcontext.Horarios.Find(id);
             return result;
         }
 
-        public Horario updateHorario(int horarioId, Horario horario)
+        public Horario UpdateHorario(int horarioId, Horario horario)
         {
             var result = _RestauranteDbcontext.Horarios.Find(horarioId);
-            result.horarioId = horario.horarioId;
+            result.HorarioId = horario.HorarioId;
             _RestauranteDbcontext.Horarios.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

@@ -2,12 +2,12 @@
 {
     public class Reserva
     {
-        public int reservaId { get; set; }
-        public int clienteId { get; set; }
-        public int mesaId { get; set; }
-        public int horarioId { get; set; }
-        public int numPersonas { get; set; }
-        public int fecha { get; set; }
-        public bool estado { get; set; }
+        public int ReservaId { get; set; }
+        public int ClienteId { get; set; }
+        public int MesaId { get; set; }
+        public int HorarioId { get; set; }
+        public int NumPersonas { get; set; }
+        public int Fecha { get; set; }
+        public bool Estado { get; set; }
     }
 }

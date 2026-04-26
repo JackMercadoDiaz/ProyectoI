@@ -2,9 +2,9 @@
 {
     public class Cliente
     {
-        public int clienteId { get; set; }
-        public string nombre { get; set; }
-        public string telefono { get; set; }
-        public string correoElectronico { get; set; }
+        public int ClienteId { get; set; }
+        public string Nombre { get; set; }
+        public string Telefono { get; set; }
+        public string CorreoElectronico { get; set; }
     }
 }

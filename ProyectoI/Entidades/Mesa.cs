@@ -2,11 +2,11 @@
 {
     public class Mesa
     {
-        public int mesaId { get; set; }
-        public string numMesa { get; set; }
-        public int capacidad { get; set; }
-        public int zonaId { get; set; }
-        public bool estado { get; set; }
+        public int MesaId { get; set; }
+        public string NumMesa { get; set; }
+        public int Capacidad { get; set; }
+        public int ZonaId { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

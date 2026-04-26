@@ -4,12 +4,10 @@ namespace ProyectoI.Servicios.Interfaces
 {
     public interface IListaDeEspera
     {
-     public List<ListaDeEspera> getAllListasDeEsperas();
-     public ListaDeEspera getListaDeEsperaById(int id);
-     
-        
-     public ListaDeEspera createListaDeEspera(ListaDeEspera listaDeEspera);
-     public ListaDeEspera updateListaDeEspera(int id, ListaDeEspera listaDeEspera);
-     void deleteListaDeEspera(int id);
+     public List<ListaDeEspera> GetAllListasDeEsperas();
+     public ListaDeEspera GetListaDeEsperaById(int id);     
+     public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera);
+     public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera);
+     void DeleteListaDeEspera(int id);
     }
 }

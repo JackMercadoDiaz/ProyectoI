@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Horario> Get()
         {
-            var result = _horarioService.GetAllHorario();
+            var result = _horarioService.getAllHorario();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet()]
         public Horario Get(int id)
         {
-            var result = _horarioService.GetHorarioById(id);
+            var result = _horarioService.getHorarioById(id);
             return result;
         }
         [HttpGet()]

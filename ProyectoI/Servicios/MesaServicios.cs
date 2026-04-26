@@ -4,27 +4,27 @@ namespace ProyectoI.Servicios
 {
     public class MesaServicios : IMesa
     {
-        public Mesa CreateMesa(Mesa mesa)
+        public Mesa createMesa(Mesa mesa)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteMesa(int id)
+        public void deleteMesa(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Mesa> GetAllMesas()
+        public List<Mesa> getAllMesas()
         {
             throw new NotImplementedException();
         }
 
-        public Mesa GetMesaById(int id)
+        public Mesa getMesaById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Mesa UpdateMesa(int mesaId, Mesa mesa)
+        public Mesa updateMesa(int mesaId, Mesa mesa)
         {
             throw new NotImplementedException();
         }

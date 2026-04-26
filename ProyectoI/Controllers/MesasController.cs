@@ -21,7 +21,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Mesa> Get()
         {
-            var result = _mesaServicio.GetAllMesas();
+            var result = _mesaServicio.getAllMesas();
             return result;
         }
 
@@ -29,7 +29,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Mesa Get(int id)
         {
-            var result = _mesaServicio.GetMesaById(id);
+            var result = _mesaServicio.getMesaById(id);
             return result;
         }
 
@@ -37,7 +37,7 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Mesa Post([FromBody] Mesa newMesa)
         {
-            var result = _mesaServicio.CreateMesa(newMesa);
+            var result = _mesaServicio.createMesa(newMesa);
             return result;
         }
 
@@ -46,7 +46,7 @@ namespace ProyectoI.Controllers
         [HttpPut("{id}")]
         public Mesa Put(int id, [FromBody] Mesa updatedMesa)
         {
-            var result = _mesaServicio.UpdateMesa(id, updatedMesa);
+            var result = _mesaServicio.updateMesa(id, updatedMesa);
             return result;
         }
 
@@ -54,7 +54,7 @@ namespace ProyectoI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _mesaServicio.DeleteMesa(id);
+            _mesaServicio.deleteMesa(id);
         }
     }
 }

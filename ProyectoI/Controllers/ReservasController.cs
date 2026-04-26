@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Reserva> Get()
         {
-            var result = _reservaService.GetAllReservas();
+            var result = _reservaService.getAllReservas();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Reserva Get(int id)
         {
-            var result = _reservaService.GetReservaById(id);
+            var result = _reservaService.getReservaById(id);
             return result;
         }
 

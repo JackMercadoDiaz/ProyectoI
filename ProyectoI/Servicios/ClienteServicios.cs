@@ -14,12 +14,12 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public List<Cliente> GetAllClientes()
+        public List<Cliente> getAllClientes()
         {
             throw new NotImplementedException();
         }
 
-        public Cliente GetClienteById(int ClienteId)
+        public Cliente getClienteById(int ClienteId)
         {
             throw new NotImplementedException();
         }

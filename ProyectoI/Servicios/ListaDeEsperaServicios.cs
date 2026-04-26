@@ -5,22 +5,22 @@ namespace ProyectoI.Servicios
 {
     public class ListaDeEsperaServicios : IListaDeEspera
     {
-        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera)
+        public ListaDeEspera createListaDeEspera(ListaDeEspera listaDeEspera)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteListaDeEspera(int id)
+        public void deleteListaDeEspera(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<ListaDeEspera> GetAllListasDeEsperas()
+        public List<ListaDeEspera> getAllListasDeEsperas()
         {
             throw new NotImplementedException();
         }
 
-        public ListaDeEspera GetListaDeEsperaById(int id)
+        public ListaDeEspera getListaDeEsperaById(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace ProyectoI.Servicios
             throw new NotImplementedException();
         }
 
-        public ListaDeEspera UpdateListaDeEspera(int listaDeEsperaId, ListaDeEspera listaDeEspera)
+        public ListaDeEspera updateListaDeEspera(int listaDeEsperaId, ListaDeEspera listaDeEspera)
         {
             throw new NotImplementedException();
         }

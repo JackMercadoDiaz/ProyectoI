@@ -25,12 +25,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Bloqueo> GetAllBloqueos()
+        public List<Bloqueo> getAllBloqueos()
         {
             return _RestauranteDbcontext.Bloqueos.ToList();
         }
 
-        public Bloqueo GetBloqueoById(int bloqueoId)
+        public Bloqueo getBloqueoById(int bloqueoId)
         {
             var result = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
             return result;

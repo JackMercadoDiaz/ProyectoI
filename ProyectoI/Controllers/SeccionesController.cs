@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Seccion> Get()
         {
-            var result = _seccionService.GetAllSecciones();
+            var result = _seccionService.getAllSecciones();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Seccion Get(int id)
         {
-            var result = _seccionService.GetSeccionById(id);
+            var result = _seccionService.getSeccionById(id);
             return result;
         }
 

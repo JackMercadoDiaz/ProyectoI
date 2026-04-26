@@ -25,12 +25,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Zona> GetAllZonas()
+        public List<Zona> getAllZonas()
         {
             return _RestauranteDbcontext.Zonas.ToList();
         }
 
-        public Zona GetZonaById(int ZonaId)
+        public Zona getZonaById(int ZonaId)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
             return result;

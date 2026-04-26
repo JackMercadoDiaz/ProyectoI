@@ -5,8 +5,8 @@ namespace ProyectoI.Servicios.Interfaces
     public interface IReserva
     {
         //Reads
-        public List<Reserva> GetAllReservas ();
-        public Reserva GetReservaById (int reservaId);
+        public List<Reserva> getAllReservas ();
+        public Reserva getReservaById (int reservaId);
         //writes
         public Reserva createReserva (Reserva reserva);
         public Reserva updateReserva (int reservaId, Reserva reserva);

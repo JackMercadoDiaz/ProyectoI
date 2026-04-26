@@ -20,7 +20,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Cliente> Get()
         {
-            var result = _clienteService.GetAllClientes();
+            var result = _clienteService.getAllClientes();
             return result;
         }
 
@@ -28,7 +28,7 @@ namespace ProyectoI.Controllers
         [HttpGet()]
         public Cliente Get(int id)
         {
-            var result = _clienteService.GetClienteById(id);
+            var result = _clienteService.getClienteById(id);
             return result;
         }
         [HttpGet()]

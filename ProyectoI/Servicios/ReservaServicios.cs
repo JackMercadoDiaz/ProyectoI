@@ -26,12 +26,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Reserva> GetAllReservas()
+        public List<Reserva> getAllReservas()
         {
             return _RestauranteDbcontext.Reservas.ToList();
         }
 
-        public Reserva GetReservaById(int reservaId)
+        public Reserva getReservaById(int reservaId)
         {
             var result = _RestauranteDbcontext.Reservas.Find(reservaId);
             return result;

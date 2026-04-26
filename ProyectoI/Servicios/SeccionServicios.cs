@@ -28,12 +28,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Seccion> GetAllSecciones()
+        public List<Seccion> getAllSecciones()
         {
             return _RestauranteDbcontext.Secciones.ToList();
         }
 
-        public Seccion GetSeccionById(int seccionId)
+        public Seccion getSeccionById(int seccionId)
         {
             var result = _RestauranteDbcontext.Secciones.Find(seccionId);
             return result;

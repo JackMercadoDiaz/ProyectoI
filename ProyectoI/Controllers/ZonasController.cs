@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Zona> Get()
         {
-            var result = _zonasService.GetAllZonas();
+            var result = _zonasService.getAllZonas();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Zona Get(int id)
         {
-            var result = _zonasService.GetZonaById(id);
+            var result = _zonasService.getZonaById(id);
             return result;
         }
 

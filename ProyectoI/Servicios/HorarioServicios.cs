@@ -24,12 +24,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
         }
 
-        public List<Horario> GetAllHorario()
+        public List<Horario> getAllHorario()
         {
             return _RestauranteDbcontext.Horarios.ToList();
         }
 
-        public Horario GetHorarioById(int id)
+        public Horario getHorarioById(int id)
         {
             var result = _RestauranteDbcontext.Horarios.Find(id);
             return result;

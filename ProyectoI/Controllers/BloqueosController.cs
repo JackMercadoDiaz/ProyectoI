@@ -19,7 +19,7 @@ namespace ProyectoI.Controllers
         [HttpGet]
         public IEnumerable<Bloqueo> Get()
         {
-            var result = _bloqueoService.GetAllBloqueos();
+            var result = _bloqueoService.getAllBloqueos();
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace ProyectoI.Controllers
         [HttpGet("{id}")]
         public Bloqueo Get(int id)
         {
-            var result = _bloqueoService.GetBloqueoById(id);
+            var result = _bloqueoService.getBloqueoById(id);
             return result;
         }
 

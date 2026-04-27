@@ -35,23 +35,38 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Reserva Post([FromBody] Reserva newReserva)
         {
-            var result = _reservaService.CreateReserva(newReserva);
+            var result = _reservaService.CreateReserva(newReserva.ClienteId, newReserva.MesaId, newReserva.HorarioId, newReserva.NumPersonas, newReserva.Fecha);
             return result;
+
         }
 
         // PUT api/<ReservasController>/5
-        [HttpPut("{id}")]
-        public Reserva Put(int id, [FromBody] Reserva updateReserva)
+        [HttpPut("{id}/atender")]
+        public Reserva Put(int id, [FromBody] Reserva atenderReserva)
         {
-            var result = _reservaService.UpdateReserva(id, updateReserva);
+            var result = _reservaService.AtenderReserva(id, atenderReserva);
             return result;
         }
 
         // DELETE api/<ReservasController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/cancelar")]
         public void Delete(int id)
         {
-            _reservaService.DeleteReserva(id);
+            _reservaService.CancelarReserva(id);  
+        }
+
+        [HttpGet("verificar")]
+        public IActionResult VerificarDisponibilidad(int mesaId, int horarioId, DateTime fecha)
+        {
+            var disponibilidad = _reservaService.ValidarDisponibilidadMesa(mesaId, horarioId, fecha);
+            if (disponibilidad)
+            {
+                return Ok("La mesa está disponible.");
+            }
+            else
+            {
+                return BadRequest("La mesa no está disponible en la fecha y hora seleccionadas.");
+            }
         }
     }
 }

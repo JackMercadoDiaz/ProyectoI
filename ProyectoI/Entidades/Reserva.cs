@@ -7,7 +7,7 @@
         public int MesaId { get; set; }
         public int HorarioId { get; set; }
         public int NumPersonas { get; set; }
-        public int Fecha { get; set; }
-        public bool Estado { get; set; }
+        public DateTime Fecha { get; set; }
+        public string Estado { get; set; }
     }
 }

@@ -10,19 +10,6 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = resturanteDbContext;
         }
-        public Horario CreateHorario(Horario horario)
-        {
-            _RestauranteDbcontext.Horarios.Add(horario);
-            _RestauranteDbcontext.SaveChanges();
-            return horario;
-        }
-
-        public void DeleteHorario(int horarioId)
-        {
-            var result = _RestauranteDbcontext.Horarios.Find(horarioId);
-            _RestauranteDbcontext.Horarios.Remove(result);
-            _RestauranteDbcontext.SaveChanges();
-        }
 
         public List<Horario> GetAllHorario()
         {
@@ -35,13 +22,38 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Horario UpdateHorario(int horarioId, Horario horario)
+        public Horario CreateHorario(string nombre, string diaSemana, TimeOnly horaInicio, TimeOnly horaFin)
         {
-            var result = _RestauranteDbcontext.Horarios.Find(horarioId);
-            result.HorarioId = horario.HorarioId;
-            _RestauranteDbcontext.Horarios.Update(result);
-            _RestauranteDbcontext.SaveChanges();
-            return result;
+            var result = new Horario
+            {
+                Nombre = nombre,
+                DiaSemana = diaSemana,
+                HoraInicio = horaInicio,
+                HoraFin = horaFin
+            };
+             _RestauranteDbcontext.Horarios.Add(result);
+             _RestauranteDbcontext.SaveChanges();
+             return result;
+        }
+
+        public string ValidarHorario(DateTime fecha, int horarioId)
+        {
+            var horario = _RestauranteDbcontext.Horarios.Find(horarioId);
+            if (horario == null)
+            {
+                return "Horario no encontrado";
+            }
+            var diaSemana = fecha.DayOfWeek.ToString();
+            if (horario.DiaSemana != diaSemana)
+            {
+                return "El horario no es válido para el día seleccionado";
+            }
+            var horaActual = TimeOnly.FromDateTime(fecha);
+            if (horaActual < horario.HoraInicio || horaActual > horario.HoraFin)
+            {
+                return "El horario no es válido para la hora seleccionada";
+            }
+            return "Horario válido";
 
         }
     }

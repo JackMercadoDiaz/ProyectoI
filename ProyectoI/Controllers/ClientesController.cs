@@ -25,13 +25,12 @@ namespace ProyectoI.Controllers
         }
 
         // GET api/<ClientesController>/5
-        [HttpGet()]
+        [HttpGet("{id}")]
         public Cliente Get(int id)
         {
             var result = _clienteService.GetClienteById(id);
             return result;
         }
-        [HttpGet()]
 
         // POST api/<ClientesController>
         [HttpPost]

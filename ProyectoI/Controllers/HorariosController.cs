@@ -24,13 +24,12 @@ namespace ProyectoI.Controllers
         }
 
         // GET api/<HorariosController>/5
-        [HttpGet()]
+        [HttpGet("{id}")]
         public Horario Get(int id)
         {
             var result = _horarioService.GetHorarioById(id);
             return result;
         }
-        [HttpGet()]
 
         // POST api/<HorariosController>
         [HttpPost]

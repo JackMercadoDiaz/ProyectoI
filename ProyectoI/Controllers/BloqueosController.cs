@@ -11,9 +11,9 @@ namespace ProyectoI.Controllers
     public class BloqueosController : ControllerBase
     {
         private readonly IBloqueo _bloqueoService;
-                public BloqueosController(IBloqueo bloqueoService)
-            {
-                _bloqueoService = bloqueoService;
+        public BloqueosController(IBloqueo bloqueoService)
+        {
+           _bloqueoService = bloqueoService;
         }
         // GET: api/<BloqueosController>
         [HttpGet]

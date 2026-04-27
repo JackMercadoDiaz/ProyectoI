@@ -2,6 +2,8 @@
 using ProyectoI.Servicios.Interfaces;
 using ProyectoI.RestauranteDbContext;
 
+// https://localhost:7226/api/Bloqueo
+
 namespace ProyectoI.Servicios
 {
     public class BloqueoServicios : IBloqueo

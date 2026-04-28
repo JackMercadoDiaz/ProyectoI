@@ -52,17 +52,30 @@ public class ResturanteDbContext : DbContext
         ); 
 
         modelBuilder.Entity<Mesa>().HasData(
-            new Mesa { MesaId = 1, ZonaId = 1, ZonaId = 1, Capacidad = 4 },
-            new Mesa { MesaId = 2, ZonaId = 1, ZonaId = 1, Capacidad = 2 },
-
+            new Mesa { MesaId = 1, ZonaId = 1, NumMesa = 1, Capacidad = 4 },
+            new Mesa { MesaId = 2, ZonaId = 1, NumMesa = 2, Capacidad = 7 },
+            new Mesa { MesaId = 3, ZonaId = 2, NumMesa = 3, Capacidad = 6 },
+            new Mesa { MesaId = 4, ZonaId = 2, NumMesa = 4, Capacidad = 3 },
+            new Mesa { MesaId = 5, ZonaId = 1, NumMesa = 5, Capacidad = 5 },
+            new Mesa { MesaId = 6, ZonaId = 1, NumMesa = 6, Capacidad = 4 },
+            new Mesa { MesaId = 7, ZonaId = 2, NumMesa = 7, Capacidad = 16 },
+            new Mesa { MesaId = 8, ZonaId = 2, NumMesa = 8, Capacidad = 4 }
         );
 
         modelBuilder.Entity<ListaDeEspera>().HasData(
-
+            new ListaDeEspera { ListaDeEsperaId = 1, ClienteId = 1, NumPersonas = 4, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(1)), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 2, ClienteId = 2, NumPersonas = 2, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(2)), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 3, ClienteId = 3, NumPersonas = 6, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(3)), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 4, ClienteId = 4, NumPersonas = 3, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(4)), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 5, ClienteId = 5, NumPersonas = 5, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(5)), EstadoId = 1 }
         );
 
         modelBuilder.Entity<Cliente>().HasData(
-
+            new Cliente { ClienteId = 1, Nombre = "Juan", Telefono = "123456789", CorreoElectronico = "juan.perez@example.com" },   
+            new Cliente { ClienteId = 2, Nombre = "María", Telefono = "987654321", CorreoElectronico = "maria.gomez@example.com" },
+            new Cliente { ClienteId = 3, Nombre = "Carlos", Telefono = "456789123", CorreoElectronico = "carlos.lopez@example.com" },
+            new Cliente { ClienteId = 4, Nombre = "Ana", Telefono = "321654987", CorreoElectronico = "ana.martinez@example.com" },
+            new Cliente { ClienteId = 5, Nombre = "Luis", Telefono = "654987321", CorreoElectronico = "luis.rodriguez@example.com" }
         );
 
     }

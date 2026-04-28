@@ -5,7 +5,7 @@ namespace ProyectoI.Servicios.Interfaces
     {
         public List<Cliente> GetAllClientes();
         public Cliente GetClienteById(int clienteId);
-        public Cliente CreateCliente(Cliente cliente);
+        public Cliente CreateCliente(string nombre, string telefono, string correoElectronico);
         public Cliente UpdateCliente(int clienteId, Cliente cliente);
         public void DeleteCliente(int clienteId);
     }

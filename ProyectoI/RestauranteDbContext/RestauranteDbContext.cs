@@ -63,11 +63,11 @@ public class ResturanteDbContext : DbContext
         );
 
         modelBuilder.Entity<ListaDeEspera>().HasData(
-            new ListaDeEspera { ListaDeEsperaId = 1, ClienteId = 1, NumPersonas = 4, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(1)), EstadoId = 1 },
-            new ListaDeEspera { ListaDeEsperaId = 2, ClienteId = 2, NumPersonas = 2, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(2)), EstadoId = 1 },
-            new ListaDeEspera { ListaDeEsperaId = 3, ClienteId = 3, NumPersonas = 6, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(3)), EstadoId = 1 },
-            new ListaDeEspera { ListaDeEsperaId = 4, ClienteId = 4, NumPersonas = 3, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(4)), EstadoId = 1 },
-            new ListaDeEspera { ListaDeEsperaId = 5, ClienteId = 5, NumPersonas = 5, Fecha = DateOnly.FromDateTime(DateTime.Today.AddDays(5)), EstadoId = 1 }
+            new ListaDeEspera { ListaDeEsperaId = 1, ClienteId = 1, NumPersonas = 4, Fecha = new DateOnly(2026, 1, 1), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 2, ClienteId = 2, NumPersonas = 2, Fecha = new DateOnly(2026, 1, 2), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 3, ClienteId = 3, NumPersonas = 6, Fecha = new DateOnly(2026, 1, 3), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 4, ClienteId = 4, NumPersonas = 3, Fecha = new DateOnly(2026, 1, 4), EstadoId = 1 },
+            new ListaDeEspera { ListaDeEsperaId = 5, ClienteId = 5, NumPersonas = 5, Fecha = new DateOnly(2026, 1, 5), EstadoId = 1 }
         );
 
         modelBuilder.Entity<Cliente>().HasData(

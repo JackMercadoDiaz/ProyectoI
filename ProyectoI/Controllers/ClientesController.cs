@@ -36,7 +36,10 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Cliente Post([FromBody] Cliente newCliente)
         {
-            var result = _clienteService.CreateCliente(newCliente);
+            var result = _clienteService.CreateCliente(
+                newCliente.Nombre,
+                newCliente.Telefono,
+                newCliente.CorreoElectronico);
             return result;
         }
 

@@ -1,6 +1,7 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoI.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -39,19 +40,37 @@ namespace ProyectoI.Controllers
         }
 
 
-        // POST api/<BloqueosController>
-        [HttpPost]
-        public Bloqueo Post([FromBody] Bloqueo newBloqueo)
+        // POST api/<BloqueosController>/mesa
+        [HttpPost("mesa")]
+        public Bloqueo PostMesa([FromBody] BloqueoMesaDto dto)
         {
-            var result = _bloqueoService.CreateBloqueo(newBloqueo);
+            var result = _bloqueoService.CreateBloqueoMesa(dto);
             return result;
         }
 
-        // DELETE api/<BloqueosController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {  
-            _bloqueoService.DeleteBloqueo(id);
+        // POST api/<BloqueosController>/zona
+        [HttpPost("zona")]
+        public Bloqueo PostZona([FromBody] BloqueoZonaDto dto)
+        {
+            var result = _bloqueoService.CreateBloqueoZona(dto);
+            return result;
+        }
+
+
+        // DELETE api/<BloqueosController>/mesa/{id}
+        [HttpDelete("mesa/{id}")]
+        public Bloqueo DeleteMesa(int id)
+        {
+            var result = _bloqueoService.DeleteBloqueoMesa(id);
+            return result;
+        }
+
+        // DELETE api/<BloqueosController>/zona/{id}
+        [HttpDelete("zona/{id}")]
+        public Bloqueo DeleteZona(int id)
+        {
+            var result = _bloqueoService.DeleteBloqueoZona(id);
+            return result;
         }
     }
 }

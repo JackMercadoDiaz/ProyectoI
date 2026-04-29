@@ -1,6 +1,7 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoI.DTOS;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -33,18 +34,18 @@ namespace ProyectoI.Controllers
 
         // POST api/<ReservasController>
         [HttpPost]
-        public Reserva Post([FromBody] Reserva newReserva)
+        public Reserva Post([FromBody] CreateReservaDTO dto)
         {
-            var result = _reservaService.CreateReserva(newReserva.ClienteId, newReserva.MesaId, newReserva.HorarioId, newReserva.NumPersonas, newReserva.Fecha);
+            var result = _reservaService.CreateReserva(dto);
             return result;
 
         }
 
         // PUT api/<ReservasController>/5
         [HttpPut("{id}/atender")]
-        public Reserva Put(int id, [FromBody] Reserva atenderReserva)
+        public Reserva Put(int id)
         {
-            var result = _reservaService.AtenderReserva(id, atenderReserva);
+            var result = _reservaService.AtenderReserva(id);
             return result;
         }
 

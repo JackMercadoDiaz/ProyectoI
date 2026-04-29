@@ -14,7 +14,7 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext = restauranteDbContext;
         }
 
-        // ── READS ────────────────────────────────────────────
+        
 
         public List<Bloqueo> GetAllBloqueos()
         {
@@ -26,7 +26,7 @@ namespace ProyectoI.Servicios
             return _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
         }
 
-        // ── WRITES ───────────────────────────────────────────
+        
 
         public Bloqueo CreateBloqueoMesa(BloqueoMesaDto dto)
         {
@@ -101,10 +101,10 @@ namespace ProyectoI.Servicios
 
             _RestauranteDbcontext.Bloqueos.Remove(bloqueo);
             _RestauranteDbcontext.SaveChanges();
-            return bloqueo;  // ← faltaba este return
+            return bloqueo;  
         }
 
-        // ── NEGOCIO ──────────────────────────────────────────
+        
 
         public bool VerificarBloqueo(int mesaId, DateTime fechaHora)
         {

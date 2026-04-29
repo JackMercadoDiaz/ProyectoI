@@ -1,6 +1,7 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 using ProyectoI.RestauranteDbContext;
+using ProyectoI.DTOs;
 
 namespace ProyectoI.Servicios
 {
@@ -11,18 +12,23 @@ namespace ProyectoI.Servicios
         {
             _RestauranteDbcontext = restauranteDbContext;
         }
-        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera)
+
+
+        public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDto dto)
         {
+            var listaDeEspera = new ListaDeEspera
+            {
+                ClienteId = dto.ClienteId,
+                HorarioId = dto.HorarioId,
+                ZonaId = dto.ZonaId,
+                Fecha = dto.Fecha,
+                NumPersonas = dto.NumPersonas,
+                Estado = "Pendiente"
+            };
+
             _RestauranteDbcontext.ListaDeEsperas.Add(listaDeEspera);
             _RestauranteDbcontext.SaveChanges();
             return listaDeEspera;
-        }
-
-        public void DeleteListaDeEspera(int listaDeEsperaId)
-        {
-            var result = _RestauranteDbcontext.ListaDeEsperas.Find(listaDeEsperaId);
-            _RestauranteDbcontext.ListaDeEsperas.Remove(result);
-            _RestauranteDbcontext.SaveChanges();
         }
 
         public List<ListaDeEspera> GetAllListasDeEsperas()
@@ -36,13 +42,31 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public ListaDeEspera UpdateListaDeEspera(int listaDeEsperaId, ListaDeEspera listaDeEspera)
+
+        public ListaDeEspera CancelarEspera(int listaDeEsperaId)
         {
             var result = _RestauranteDbcontext.ListaDeEsperas.Find(listaDeEsperaId);
-            result.ListaDeEsperaId = listaDeEspera.ListaDeEsperaId;
-            _RestauranteDbcontext.ListaDeEsperas.Update(result);
+            result.Estado = "Cancelada";
             _RestauranteDbcontext.SaveChanges();
             return result;
+        }
+
+        public ListaDeEspera AtenderSiguienteEnLista(int horarioId, DateTime fecha, int zonaId)
+        {
+            var siguiente = _RestauranteDbcontext.ListaDeEsperas
+                .Where(l => l.HorarioId == horarioId
+                    && l.ZonaId == zonaId
+                    && l.Fecha == fecha
+                    && l.Estado == "Pendiente")
+                .OrderBy(l => l.ListaDeEsperaId)
+                .FirstOrDefault();
+
+            if (siguiente == null)
+                throw new Exception("No hay entradas pendientes en la lista de espera");
+
+            siguiente.Estado = "Asignada";
+            _RestauranteDbcontext.SaveChanges();
+            return siguiente;
         }
     }
 }

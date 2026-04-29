@@ -44,5 +44,12 @@ namespace ProyectoI.Servicios
             _RestauranteDbcontext.SaveChanges();
             return result;
         }
+        public Mesa CambiarEstadoMesa(int mesaId, string estado)
+        {
+            var mesa = _RestauranteDbcontext.Mesas.Find(mesaId);
+            mesa.Estado = estado;
+            _RestauranteDbcontext.SaveChanges();
+            return mesa;
+        }
     }
 }

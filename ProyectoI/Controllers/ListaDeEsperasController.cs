@@ -1,6 +1,7 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using ProyectoI.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,25 +36,25 @@ namespace ProyectoI.Controllers
 
         // POST api/<ListaDeEsperasController>
         [HttpPost]
-        public ListaDeEspera Post([FromBody] ListaDeEspera newListaDeEspera)
+        public ListaDeEspera Post([FromBody] ListaDeEsperaDto dto)
         {
-            var result = _listaDeEsperaServicio.CreateListaDeEspera(newListaDeEspera);
+            var result = _listaDeEsperaServicio.CreateListaDeEspera(dto);
             return result;
         }
 
-        // PUT api/<ListaDeEsperasController>/5
-        [HttpPut("{id}")]
-        public ListaDeEspera Put(int id, [FromBody] ListaDeEspera updatedListaDeEspera)
+
+        [HttpPut("{id}/cancelar")]
+        public ListaDeEspera Cancelar(int id)
         {
-            var result = _listaDeEsperaServicio.UpdateListaDeEspera(id, updatedListaDeEspera);
-            return result;
+            return _listaDeEsperaServicio.CancelarEspera(id);
         }
 
-        // DELETE api/<ListaDeEsperasController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("atender")]
+        public ListaDeEspera AtenderSiguiente(int horarioId, DateTime fecha, int zonaId)
         {
-            _listaDeEsperaServicio.DeleteListaDeEspera(id);
+            return _listaDeEsperaServicio.AtenderSiguienteEnLista(horarioId, fecha, zonaId);
         }
+
+
     }
 }

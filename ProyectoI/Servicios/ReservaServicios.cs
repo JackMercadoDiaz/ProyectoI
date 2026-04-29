@@ -1,6 +1,7 @@
 ﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
 using ProyectoI.RestauranteDbContext;
+using ProyectoI.DTOS;
 
 namespace ProyectoI.Servicios
 {
@@ -22,15 +23,15 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Reserva CreateReserva(int clienteId, int mesaId, int horarioId, int numPersonas, DateTime fecha)
+        public Reserva CreateReserva(CreateReservaDTO dto)
         {
             var result = new Reserva
             {
-                ClienteId = clienteId,
-                MesaId = mesaId,
-                HorarioId = horarioId,
-                NumPersonas = numPersonas,
-                Fecha = fecha,
+                ClienteId = dto.ClienteId,
+                MesaId = dto.MesaId,
+                HorarioId = dto.HorarioId,
+                NumPersonas = dto.NumPersonas,
+                Fecha = dto.Fecha,
                 Estado = "Reserva Pendiente"
             };
             _RestauranteDbcontext.Reservas.Add(result);
@@ -38,10 +39,10 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Reserva AtenderReserva(int reservaId, Reserva reserva)
+        public Reserva AtenderReserva(int reservaId)
         {
             var result = _RestauranteDbcontext.Reservas.Find(reservaId);
-            result.Estado = "Mesa Atendida";
+            result.Estado = "Reserva Atendida";
             _RestauranteDbcontext.Reservas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

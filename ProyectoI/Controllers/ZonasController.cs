@@ -35,7 +35,9 @@ namespace ProyectoI.Controllers
         [HttpPost]
         public Zona Post([FromBody] Zona newZona)
         {
-            var result = _zonasService.CreateZona(newZona);
+            var result = _zonasService.CreateZona(
+                newZona.Nombre,
+                newZona.SeccionId);
             return result;
         }
 

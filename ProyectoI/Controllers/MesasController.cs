@@ -56,5 +56,11 @@ namespace ProyectoI.Controllers
         {
             _mesaServicio.DeleteMesa(id);
         }
+
+        [HttpPut("{mesaId}/estado")]
+        public Mesa CambiarEstado(int mesaId, string estado)
+        {
+            return _mesaServicio.CambiarEstadoMesa(mesaId, estado);
+        }
     }
 }

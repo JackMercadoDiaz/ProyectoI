@@ -10,7 +10,7 @@ namespace ProyectoI.Servicios.Interfaces
         public Mesa CreateMesa(Mesa mesa);
         public Mesa UpdateMesa(int id, Mesa mesa);
         void DeleteMesa(int id);
-        public Mesa CambiarEstadoMesa(int mesaId, bool estado);
+        public Mesa CambiarEstadoMesa(int mesaId, string estado);
 
     }
 }

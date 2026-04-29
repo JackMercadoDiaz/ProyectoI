@@ -8,7 +8,7 @@
         public int ZonaId { get; set; }
         public DateOnly Fecha { get; set; }
         public int NumPersonas { get; set; }
-        public int EstadoId { get; set; }
+        public string Estado { get; set; }
 
     }
 }

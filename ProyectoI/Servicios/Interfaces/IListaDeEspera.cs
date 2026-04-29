@@ -1,4 +1,5 @@
-﻿using ProyectoI.Entidades;
+﻿using ProyectoI.DTOs;
+using ProyectoI.Entidades;
 namespace ProyectoI.Servicios.Interfaces
 
 {
@@ -8,10 +9,10 @@ namespace ProyectoI.Servicios.Interfaces
         public List<ListaDeEspera> GetAllListasDeEsperas();
      public ListaDeEspera GetListaDeEsperaById(int id);
         // writes
-        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera);
+        public ListaDeEspera CreateListaDeEspera(ListaDeEsperaDto dto);
      public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera);
      void DeleteListaDeEspera(int id);
-        public ListaDeEspera AtenderSiguienteEnLista(int horario, string fecha, int zonaId);
+        public ListaDeEspera AtenderSiguienteEnLista(int horario, DateTime fecha, int zonaId);
         public ListaDeEspera CancelarEspera(int listaDeEsperaId);
     }
 }

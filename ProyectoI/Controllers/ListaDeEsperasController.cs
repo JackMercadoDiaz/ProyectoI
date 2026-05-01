@@ -42,7 +42,6 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-
         [HttpPut("{id}/cancelar")]
         public ListaDeEspera Cancelar(int id)
         {

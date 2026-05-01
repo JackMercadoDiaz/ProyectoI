@@ -18,7 +18,7 @@ namespace ProyectoI.Controllers
         }
 
         // GET: api/<MesaController>
-        [HttpGet]
+        [HttpGet    ]
         public IEnumerable<Mesa> Get()
         {
             var result = _mesaServicio.GetAllMesas();

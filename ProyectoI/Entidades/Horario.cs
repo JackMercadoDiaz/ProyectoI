@@ -2,7 +2,7 @@
 {
     public class Horario
     {
-        public int HorarioId { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string DiaSemana { get; set; }
         public TimeOnly HoraInicio { get; set; }

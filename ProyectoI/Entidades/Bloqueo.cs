@@ -2,7 +2,7 @@
 {
     public class Bloqueo
     {
-        public int BloqueoId { get; set; }
+        public int Id { get; set; }
         public int ZonaId { get; set; }
         public int MesaId { get; set; }
         public DateTime FechaInicio { get; set; }

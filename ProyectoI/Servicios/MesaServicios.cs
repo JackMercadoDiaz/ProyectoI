@@ -39,7 +39,7 @@ namespace ProyectoI.Servicios
         public Mesa UpdateMesa(int mesaId, Mesa mesa)
         {
             var result = _RestauranteDbcontext.Mesas.Find(mesaId);
-            result.MesaId = mesa.MesaId;
+            result.Id = mesa.Id;
             _RestauranteDbcontext.Mesas.Update(result);
             _RestauranteDbcontext.SaveChanges();
             return result;

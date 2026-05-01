@@ -31,8 +31,8 @@ namespace ProyectoI.Controllers
             var result = _clienteService.GetClienteById(id);
             return result;
         }
-
-        // POST api/<ClientesController>
+        
+        // POST api/<ClientesController>     }nota, ya hereda la ruta base api/clientes
         [HttpPost]
         public Cliente Post([FromBody] Cliente newCliente)
         {
@@ -43,7 +43,7 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-        // PUT api/<ClientesController>/5
+        // PUT api/<ClientesController>/5    }nota, ya hereda la ruta base api/clientes + id
         [HttpPut("{id}")]
         public Cliente Put(int id, [FromBody] Cliente updateCliente)
         {
@@ -51,7 +51,7 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-        // DELETE api/<ClientesController>/5
+        // DELETE api/<ClientesController>/5  }nota, ya hereda la ruta base api/clientes + id
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

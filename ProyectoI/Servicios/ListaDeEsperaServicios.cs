@@ -54,11 +54,11 @@ namespace ProyectoI.Servicios
         public ListaDeEspera AtenderSiguienteEnLista(int horarioId, DateTime fecha, int zonaId)
         {
             var siguiente = _RestauranteDbcontext.ListaDeEsperas
-                .Where(l => l.HorarioId == horarioId
-                    && l.ZonaId == zonaId
-                    && l.Fecha == fecha
-                    && l.Estado == "Pendiente")
-                .OrderBy(l => l.ListaDeEsperaId)
+                .Where(lista => lista.HorarioId == horarioId
+                    && lista.ZonaId == zonaId
+                    && lista.Fecha == fecha
+                    && lista.Estado == "Pendiente")
+                .OrderBy(lista => lista.Id)
                 .FirstOrDefault();
 
             if (siguiente == null)

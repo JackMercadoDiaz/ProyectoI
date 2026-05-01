@@ -60,10 +60,10 @@ namespace ProyectoI.Servicios
         public bool ValidarDisponibilidadMesa(int mesaId, int horarioId, DateTime fecha)
         {
             var reservaExistente = _RestauranteDbcontext.Reservas
-            .Any(r => r.MesaId == mesaId
-            && r.Fecha.Date == fecha.Date
-            && r.HorarioId == horarioId
-            && r.Estado != "Reserva Cancelada");
+            .Any(reserva => reserva.MesaId == mesaId
+            && reserva.Fecha.Date == fecha.Date
+            && reserva.HorarioId == horarioId
+            && reserva.Estado != "Reserva Cancelada");
             return reservaExistente;
         }
     }

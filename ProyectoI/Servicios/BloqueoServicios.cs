@@ -50,7 +50,7 @@ namespace ProyectoI.Servicios
         public Bloqueo CreateBloqueoZona(BloqueoZonaDto dto)
         {
             var mesas = _RestauranteDbcontext.Mesas
-                .Where(m => m.ZonaId == dto.ZonaId)
+                .Where(mesa => mesa.ZonaId == dto.ZonaId)
                 .ToList();
 
             foreach (var mesa in mesas)
@@ -91,7 +91,7 @@ namespace ProyectoI.Servicios
             if (bloqueo == null) return null;
 
             var mesas = _RestauranteDbcontext.Mesas
-                .Where(m => m.ZonaId == bloqueo.ZonaId)
+                .Where(mesa => mesa.ZonaId == bloqueo.ZonaId)
                 .ToList();
 
             foreach (var mesa in mesas)
@@ -104,15 +104,13 @@ namespace ProyectoI.Servicios
             return bloqueo;  
         }
 
-        
-
         public bool VerificarBloqueo(int mesaId, DateTime fechaHora)
         {
-            return _RestauranteDbcontext.Bloqueos.Any(b =>
-                b.MesaId == mesaId &&
-                fechaHora >= b.FechaInicio &&
-                fechaHora <= b.FechaFin &&
-                b.Estado == "Activo");
+            return _RestauranteDbcontext.Bloqueos.Any(bloqueo =>
+                bloqueo.MesaId == mesaId &&
+                fechaHora >= bloqueo.FechaInicio &&
+                fechaHora <= bloqueo.FechaFin &&
+                bloqueo.Estado == "Activo");
         }
     }
 }

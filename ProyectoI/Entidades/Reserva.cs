@@ -2,7 +2,7 @@
 {
     public class Reserva
     {
-        public int ReservaId { get; set; }
+        public int Id { get; set; }
         public int ClienteId { get; set; }
         public int MesaId { get; set; }
         public int HorarioId { get; set; }

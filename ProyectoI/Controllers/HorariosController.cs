@@ -47,7 +47,7 @@ namespace ProyectoI.Controllers
         }
 
         // PUT api/<HorariosController>/5
-     /*   [HttpPut("{id}")]
+     /*   [HttpPut("api/horarios/{id}")]
         public Horario Put(int id, [FromBody] Horario updateHorario)
         {
             var result = _horarioService.UpdateHorario(id, updateHorario);
@@ -55,7 +55,7 @@ namespace ProyectoI.Controllers
         } */
 
         // DELETE api/<HorariosController>/5
-    /*    [HttpDelete("{id}")]
+    /*    [HttpDelete("api/horarios/{id}")]
         public void Delete(int id)
         {
             _horarioService.DeleteHorario(id);

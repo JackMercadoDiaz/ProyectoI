@@ -23,7 +23,10 @@ namespace ProyectoI.Servicios
 
         public Bloqueo GetBloqueoById(int bloqueoId)
         {
-            return _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
+            var result = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
+            if (result == null)
+                throw new Exception("Bloqueo no encontrado");
+            return result;
         }
 
         
@@ -31,6 +34,9 @@ namespace ProyectoI.Servicios
         public Bloqueo CreateBloqueoMesa(BloqueoMesaDto dto)
         {
             var mesa = _RestauranteDbcontext.Mesas.Find(dto.MesaId);
+            if (mesa == null)
+                throw new Exception("Mesa no encontrada");
+
             mesa.Estado = "En Mantenimiento";
 
             var bloqueo = new Bloqueo
@@ -75,7 +81,8 @@ namespace ProyectoI.Servicios
         public Bloqueo DeleteBloqueoMesa(int bloqueoId)
         {
             var bloqueo = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
-            if (bloqueo == null) return null;
+            if (bloqueo == null) if (bloqueo == null)
+                throw new Exception("Bloqueo no encontrado");
 
             var mesa = _RestauranteDbcontext.Mesas.Find(bloqueo.MesaId);
             if (mesa != null) mesa.Estado = "Disponible";
@@ -88,7 +95,8 @@ namespace ProyectoI.Servicios
         public Bloqueo DeleteBloqueoZona(int bloqueoId)
         {
             var bloqueo = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
-            if (bloqueo == null) return null;
+            if (bloqueo == null) if (bloqueo == null)
+                throw new Exception("Mesa no encontrada");
 
             var mesas = _RestauranteDbcontext.Mesas
                 .Where(mesa => mesa.ZonaId == bloqueo.ZonaId)

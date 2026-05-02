@@ -42,20 +42,21 @@ namespace ProyectoI.Servicios
         public Cliente GetClienteById(int clienteId)
         {
             var result = _RestauranteDbcontext.Clientes.Find(clienteId);
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
             return result;
         }
 
         public Cliente UpdateCliente(int clienteId, Cliente cliente)
         {
             var result = _RestauranteDbcontext.Clientes.Find(clienteId);
-            if (result != null)
-            {
-                result.Nombre = cliente.Nombre;
-                result.Telefono = cliente.Telefono;
-                result.CorreoElectronico = cliente.CorreoElectronico;
-                _RestauranteDbcontext.Clientes.Update(result);
-                _RestauranteDbcontext.SaveChanges();
-            }
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
+
+            result.Nombre = cliente.Nombre;
+            result.Telefono = cliente.Telefono;
+            result.CorreoElectronico = cliente.CorreoElectronico;
+            _RestauranteDbcontext.SaveChanges();
             return result;
         }
     }

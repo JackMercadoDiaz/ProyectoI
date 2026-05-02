@@ -1,7 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ProyectoI.Entidades;
-using ProyectoI.RestauranteDbContext;
+﻿using ProyectoI.Entidades;
 using ProyectoI.Servicios.Interfaces;
+using ProyectoI.RestauranteDbContext;
 
 namespace ProyectoI.Servicios
 {
@@ -21,12 +20,9 @@ namespace ProyectoI.Servicios
 
         public void DeleteMesa(int mesaId)
         {
-            var mesa = _RestauranteDbcontext.Mesas.Find(mesaId);
-            if (mesa != null)
-            {
-                _RestauranteDbcontext.Mesas.Remove(mesa);
-                _RestauranteDbcontext.SaveChanges();
-            }
+            var result = _RestauranteDbcontext.Mesas.Find(mesaId);
+            _RestauranteDbcontext.Mesas.Remove(result);
+            _RestauranteDbcontext.SaveChanges();
         }
 
         public List<Mesa> GetAllMesas()
@@ -36,10 +32,8 @@ namespace ProyectoI.Servicios
 
         public Mesa GetMesaById(int mesaId)
         {
-            var mesa = _RestauranteDbcontext.Mesas.Find(mesaId);
-            if (mesa == null || mesa.Estado)
-                return null;
-            return mesa;
+            var result = _RestauranteDbcontext.Mesas.Find(mesaId);
+            return result;
         }
 
         public Mesa UpdateMesa(int mesaId, Mesa mesa)
@@ -53,7 +47,7 @@ namespace ProyectoI.Servicios
         public Mesa CambiarEstadoMesa(int mesaId, string estado)
         {
             var mesa = _RestauranteDbcontext.Mesas.Find(mesaId);
-            mesa.Estado = estado == "activo";
+            mesa.Estado = estado;
             _RestauranteDbcontext.SaveChanges();
             return mesa;
         }

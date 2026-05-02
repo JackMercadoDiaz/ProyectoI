@@ -56,7 +56,6 @@ namespace ProyectoI.Controllers
             _reservaService.CancelarReserva(id);  
         }
 
-        //  verifica api/
         [HttpGet("verificar")]
         public IActionResult VerificarDisponibilidad(int mesaId, int horarioId, DateTime fecha)
         {

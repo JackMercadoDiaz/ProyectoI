@@ -31,7 +31,7 @@ namespace ProyectoI.Servicios
         public Bloqueo CreateBloqueoMesa(BloqueoMesaDto dto)
         {
             var mesa = _RestauranteDbcontext.Mesas.Find(dto.MesaId);
-            mesa.Estado = false;
+            mesa.Estado = "En Mantenimiento";
 
             var bloqueo = new Bloqueo
             {
@@ -55,7 +55,7 @@ namespace ProyectoI.Servicios
 
             foreach (var mesa in mesas)
             {
-                mesa.Estado = false;
+                mesa.Estado = "En Mantenimiento";
             }
 
             var bloqueo = new Bloqueo
@@ -78,7 +78,7 @@ namespace ProyectoI.Servicios
             if (bloqueo == null) return null;
 
             var mesa = _RestauranteDbcontext.Mesas.Find(bloqueo.MesaId);
-            if (mesa != null) mesa.Estado = true;
+            if (mesa != null) mesa.Estado = "Disponible";
 
             _RestauranteDbcontext.Bloqueos.Remove(bloqueo);
             _RestauranteDbcontext.SaveChanges();
@@ -96,7 +96,7 @@ namespace ProyectoI.Servicios
 
             foreach (var mesa in mesas)
             {
-                mesa.Estado = true;
+                mesa.Estado = "Disponible";
             }
 
             _RestauranteDbcontext.Bloqueos.Remove(bloqueo);

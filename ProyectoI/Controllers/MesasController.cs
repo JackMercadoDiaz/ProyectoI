@@ -18,55 +18,49 @@ namespace ProyectoI.Controllers
         }
 
         // GET: api/<MesaController>
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet    ]
+        public IEnumerable<Mesa> Get()
         {
             var result = _mesaServicio.GetAllMesas();
-            return Ok(result);
+            return result;
         }
 
         // GET api/<MesaController>/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public Mesa Get(int id)
         {
-            var mesa = _mesaServicio.GetMesaById(id);
-
-            if (mesa == null)
-                return NotFound("Mesa eliminada.");
-
-            return Ok(mesa);
+            var result = _mesaServicio.GetMesaById(id);
+            return result;
         }
 
         // POST api/<MesaController>
         [HttpPost]
-        public IActionResult Post([FromBody] Mesa newMesa)
+        public Mesa Post([FromBody] Mesa newMesa)
         {
             var result = _mesaServicio.CreateMesa(newMesa);
-            return Ok(result);
+            return result;
         }
 
         // PUT api/<MesaController>/5
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Mesa updatedMesa)
+        public Mesa Put(int id, [FromBody] Mesa updatedMesa)
         {
             var result = _mesaServicio.UpdateMesa(id, updatedMesa);
-            return Ok(result);
+            return result;
         }
 
         // DELETE api/<MesaController>/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public void Delete(int id)
         {
             _mesaServicio.DeleteMesa(id);
-            return Ok("Mesa eliminada.");
         }
 
         [HttpPut("{mesaId}/estado")]
-        public IActionResult CambiarEstado(int mesaId, string estado)
+        public Mesa CambiarEstado(int mesaId, string estado)
         {
-            var result = _mesaServicio.CambiarEstadoMesa(mesaId, estado);
-            return Ok(result);
+            return _mesaServicio.CambiarEstadoMesa(mesaId, estado);
         }
     }
 }

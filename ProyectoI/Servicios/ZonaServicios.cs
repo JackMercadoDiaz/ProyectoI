@@ -44,8 +44,11 @@ namespace ProyectoI.Servicios
         public Zona UpdateZona(int ZonaId, Zona zona)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
-            result.Id = zona.Id;
-            _RestauranteDbcontext.Zonas.Update(result);
+            if (result == null) return null;
+
+            result.Nombre = zona.Nombre;
+            result.SeccionId = zona.SeccionId;
+
             _RestauranteDbcontext.SaveChanges();
             return result;
         }

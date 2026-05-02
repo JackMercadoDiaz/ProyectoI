@@ -65,9 +65,9 @@ public class ResturanteDbContext : DbContext
         );
 
         modelBuilder.Entity<Bloqueo>().HasData(
-            new Bloqueo { Id = 1, ZonaId = 1, MesaId = 1, FechaInicio = DateTime.Today.AddDays(1), FechaFin = DateTime.Today.AddDays(2), Estado = "Activo", Motivo = "Mantenimiento" },
-            new Bloqueo { Id = 2, ZonaId = 1, MesaId = 2, FechaInicio = DateTime.Today.AddDays(3), FechaFin = DateTime.Today.AddDays(4), Estado = "Activo", Motivo = "Evento Privado" },
-            new Bloqueo { Id = 3, ZonaId = 2, MesaId = 3, FechaInicio = DateTime.Today.AddDays(5), FechaFin = DateTime.Today.AddDays(6), Estado = "Activo", Motivo = "Mantenimiento" }
+            new Bloqueo { Id = 1, MesaId = 1, ZonaId = null, FechaInicio = DateTime.Today.AddDays(1), FechaFin = DateTime.Today.AddDays(2), Estado = "Activo", Motivo = "Mantenimiento" },
+        new Bloqueo { Id = 2, MesaId = 2, ZonaId = null, FechaInicio = DateTime.Today.AddDays(3), FechaFin = DateTime.Today.AddDays(4), Estado = "Activo", Motivo = "Evento Privado" },
+        new Bloqueo { Id = 3, MesaId = null, ZonaId = 2, FechaInicio = DateTime.Today.AddDays(5), FechaFin = DateTime.Today.AddDays(6), Estado = "Activo", Motivo = "Mantenimiento" }
         );
 
         modelBuilder.Entity<ListaDeEspera>().HasData(

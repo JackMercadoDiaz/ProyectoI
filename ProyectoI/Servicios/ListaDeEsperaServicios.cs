@@ -54,15 +54,14 @@ namespace ProyectoI.Servicios
         public ListaDeEspera AtenderSiguienteEnLista(int horarioId, DateTime fecha, int zonaId)
         {
             var siguiente = _RestauranteDbcontext.ListaDeEsperas
-                .Where(lista => lista.HorarioId == horarioId
-                    && lista.ZonaId == zonaId
-                    && lista.Fecha == fecha
-                    && lista.Estado == "Pendiente")
-                .OrderBy(lista => lista.Id)
-                .FirstOrDefault();
+           .Where(lista => lista.HorarioId == horarioId
+              && lista.ZonaId == zonaId
+              && lista.Fecha.Date == fecha.Date
+              && lista.Estado == "Pendiente")
+          .OrderBy(lista => lista.Id)
+          .FirstOrDefault();
 
-            if (siguiente == null)
-                throw new Exception("No hay entradas pendientes en la lista de espera");
+            if (siguiente == null) return null;
 
             siguiente.Estado = "Asignada";
             _RestauranteDbcontext.SaveChanges();

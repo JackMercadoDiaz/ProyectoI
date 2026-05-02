@@ -38,14 +38,14 @@ public class ResturanteDbContext : DbContext
         );
 
         modelBuilder.Entity<Mesa>().HasData(
-            new Mesa { Id = 1, ZonaId = 1, NumMesa = 1, Capacidad = 4, Estado = "Disponible" },
-            new Mesa { Id = 2, ZonaId = 1, NumMesa = 2, Capacidad = 7, Estado = "Disponible" },
-            new Mesa { Id = 3, ZonaId = 2, NumMesa = 3, Capacidad = 6, Estado = "Disponible" },
-            new Mesa { Id = 4, ZonaId = 2, NumMesa = 4, Capacidad = 3, Estado = "Disponible" },
-            new Mesa { Id = 5, ZonaId = 1, NumMesa = 5, Capacidad = 5, Estado = "Disponible" },
-            new Mesa { Id = 6, ZonaId = 1, NumMesa = 6, Capacidad = 4, Estado = "Disponible" },
-            new Mesa { Id = 7, ZonaId = 2, NumMesa = 7, Capacidad = 16, Estado = "Disponible" },
-            new Mesa { Id = 8, ZonaId = 3, NumMesa = 8, Capacidad = 4, Estado = "Disponible" }
+            new Mesa { Id = 1, ZonaId = 1, NumMesa = 1, Capacidad = 4, Estado = true },
+            new Mesa { Id = 2, ZonaId = 1, NumMesa = 2, Capacidad = 7, Estado = true },
+            new Mesa { Id = 3, ZonaId = 2, NumMesa = 3, Capacidad = 6, Estado = true },
+            new Mesa { Id = 4, ZonaId = 2, NumMesa = 4, Capacidad = 3, Estado = true },
+            new Mesa { Id = 5, ZonaId = 1, NumMesa = 5, Capacidad = 5, Estado = true },
+            new Mesa { Id = 6, ZonaId = 1, NumMesa = 6, Capacidad = 4, Estado = true },
+            new Mesa { Id = 7, ZonaId = 2, NumMesa = 7, Capacidad = 16, Estado = true },
+            new Mesa { Id = 8, ZonaId = 3, NumMesa = 8, Capacidad = 4, Estado = true }
         );
 
         modelBuilder.Entity<Cliente>().HasData(

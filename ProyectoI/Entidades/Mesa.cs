@@ -6,7 +6,7 @@
         public int NumMesa { get; set; }
         public int Capacidad { get; set; }
         public int ZonaId { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
 
     }
 }

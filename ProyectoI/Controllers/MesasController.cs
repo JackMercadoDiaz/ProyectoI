@@ -18,49 +18,55 @@ namespace ProyectoI.Controllers
         }
 
         // GET: api/<MesaController>
-        [HttpGet    ]
-        public IEnumerable<Mesa> Get()
+        [HttpGet]
+        public IActionResult Get()
         {
             var result = _mesaServicio.GetAllMesas();
-            return result;
+            return Ok(result);
         }
 
         // GET api/<MesaController>/5
         [HttpGet("{id}")]
-        public Mesa Get(int id)
+        public IActionResult Get(int id)
         {
-            var result = _mesaServicio.GetMesaById(id);
-            return result;
+            var mesa = _mesaServicio.GetMesaById(id);
+
+            if (mesa == null)
+                return NotFound("Mesa eliminada.");
+
+            return Ok(mesa);
         }
 
         // POST api/<MesaController>
         [HttpPost]
-        public Mesa Post([FromBody] Mesa newMesa)
+        public IActionResult Post([FromBody] Mesa newMesa)
         {
             var result = _mesaServicio.CreateMesa(newMesa);
-            return result;
+            return Ok(result);
         }
 
         // PUT api/<MesaController>/5
 
         [HttpPut("{id}")]
-        public Mesa Put(int id, [FromBody] Mesa updatedMesa)
+        public IActionResult Put(int id, [FromBody] Mesa updatedMesa)
         {
             var result = _mesaServicio.UpdateMesa(id, updatedMesa);
-            return result;
+            return Ok(result);
         }
 
         // DELETE api/<MesaController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
             _mesaServicio.DeleteMesa(id);
+            return Ok("Mesa eliminada.");
         }
 
         [HttpPut("{mesaId}/estado")]
-        public Mesa CambiarEstado(int mesaId, string estado)
+        public IActionResult CambiarEstado(int mesaId, string estado)
         {
-            return _mesaServicio.CambiarEstadoMesa(mesaId, estado);
+            var result = _mesaServicio.CambiarEstadoMesa(mesaId, estado);
+            return Ok(result);
         }
     }
 }

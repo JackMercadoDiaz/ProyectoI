@@ -49,9 +49,14 @@ namespace ProyectoI.Controllers
         }
 
         [HttpPut("atender")]
-        public ListaDeEspera AtenderSiguiente(int horarioId, DateTime fecha, int zonaId)
+        public IActionResult AtenderSiguiente(int horarioId, DateTime fecha, int zonaId)
         {
-            return _listaDeEsperaServicio.AtenderSiguienteEnLista(horarioId, fecha, zonaId);
+            var resultado = _listaDeEsperaServicio.AtenderSiguienteEnLista(horarioId, fecha, zonaId);
+
+            if (resultado == null)
+                return NotFound("No hay entradas pendientes con esos parámetros");
+
+            return Ok(resultado);
         }
 
 

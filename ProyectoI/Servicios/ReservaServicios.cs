@@ -66,8 +66,6 @@ namespace ProyectoI.Servicios
             && reserva.Estado == "Activa");
 
             return !hayConflicto; // true = disponible, false = ocupada
-
-            return !hayConflicto; // true = disponible, false = ocupada
         }
     }
 }

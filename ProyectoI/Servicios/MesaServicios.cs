@@ -21,6 +21,9 @@ namespace ProyectoI.Servicios
         public void DeleteMesa(int mesaId)
         {
             var result = _RestauranteDbcontext.Mesas.Find(mesaId);
+            if (result == null)
+                throw new Exception("Mesa no encontrada");
+
             _RestauranteDbcontext.Mesas.Remove(result);
             _RestauranteDbcontext.SaveChanges();
         }
@@ -33,13 +36,16 @@ namespace ProyectoI.Servicios
         public Mesa GetMesaById(int mesaId)
         {
             var result = _RestauranteDbcontext.Mesas.Find(mesaId);
+            if (result == null)
+                throw new Exception("Mesa no encontrada");
             return result;
         }
 
         public Mesa UpdateMesa(int mesaId, Mesa mesa)
         {
             var result = _RestauranteDbcontext.Mesas.Find(mesaId);
-            if (result == null) return null;
+            if (result == null)
+                throw new Exception("Mesa no encontrada");
 
             result.NumMesa = mesa.NumMesa;
             result.Capacidad = mesa.Capacidad;
@@ -52,6 +58,9 @@ namespace ProyectoI.Servicios
         public Mesa CambiarEstadoMesa(int mesaId, string estado)
         {
             var mesa = _RestauranteDbcontext.Mesas.Find(mesaId);
+            if (mesa == null)
+                throw new Exception("Mesa no encontrada");
+
             mesa.Estado = estado;
             _RestauranteDbcontext.SaveChanges();
             return mesa;

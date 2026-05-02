@@ -19,6 +19,8 @@ namespace ProyectoI.Servicios
         public Horario GetHorarioById(int id)
         {
             var result = _RestauranteDbcontext.Horarios.Find(id);
+            if (result == null)
+                throw new Exception("Horario no encontrado");
             return result;
         }
 

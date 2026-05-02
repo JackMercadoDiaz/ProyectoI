@@ -29,6 +29,9 @@ namespace ProyectoI.Servicios
         public Seccion GetSeccionById(int seccionId)
         {
             var result = _RestauranteDbcontext.Secciones.Find(seccionId);
+            if (result == null)
+                throw new Exception("Seccion no encontrada");
+
             return result;
         }
 

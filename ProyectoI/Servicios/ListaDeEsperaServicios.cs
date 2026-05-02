@@ -39,6 +39,8 @@ namespace ProyectoI.Servicios
         public ListaDeEspera GetListaDeEsperaById(int listaDeEsperaId)
         {
             var result = _RestauranteDbcontext.ListaDeEsperas.Find(listaDeEsperaId);
+            if (result == null)
+                throw new Exception("Id no encontrado");
             return result;
         }
 
@@ -46,6 +48,9 @@ namespace ProyectoI.Servicios
         public ListaDeEspera CancelarEspera(int listaDeEsperaId)
         {
             var result = _RestauranteDbcontext.ListaDeEsperas.Find(listaDeEsperaId);
+            if (result == null)
+                throw new Exception("Id no encontrado");
+
             result.Estado = "Cancelada";
             _RestauranteDbcontext.SaveChanges();
             return result;
@@ -54,14 +59,15 @@ namespace ProyectoI.Servicios
         public ListaDeEspera AtenderSiguienteEnLista(int horarioId, DateTime fecha, int zonaId)
         {
             var siguiente = _RestauranteDbcontext.ListaDeEsperas
-           .Where(lista => lista.HorarioId == horarioId
-              && lista.ZonaId == zonaId
-              && lista.Fecha.Date == fecha.Date
-              && lista.Estado == "Pendiente")
-          .OrderBy(lista => lista.Id)
-          .FirstOrDefault();
+        .Where(lista => lista.HorarioId == horarioId
+            && lista.ZonaId == zonaId
+            && lista.Fecha.Date == fecha.Date
+            && lista.Estado == "Pendiente")
+        .OrderBy(lista => lista.Id)
+        .FirstOrDefault();
 
-            if (siguiente == null) return null;
+            if (siguiente == null)
+                throw new Exception("No hay entradas pendientes en la lista de espera con esos parámetros");
 
             siguiente.Estado = "Asignada";
             _RestauranteDbcontext.SaveChanges();

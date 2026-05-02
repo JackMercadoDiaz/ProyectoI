@@ -26,6 +26,9 @@ namespace ProyectoI.Servicios
         public void DeleteZona(int ZonaId)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            if (result == null)
+                throw new Exception("Zona no encontrada");
+
             _RestauranteDbcontext.Zonas.Remove(result);
             _RestauranteDbcontext.SaveChanges();
         }
@@ -38,13 +41,16 @@ namespace ProyectoI.Servicios
         public Zona GetZonaById(int ZonaId)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
+            if (result == null)
+                throw new Exception("Zona no encontrada");
             return result;
         }
 
         public Zona UpdateZona(int ZonaId, Zona zona)
         {
             var result = _RestauranteDbcontext.Zonas.Find(ZonaId);
-            if (result == null) return null;
+            if (result == null)
+                    throw new Exception("Zona no encontrada");
 
             result.Nombre = zona.Nombre;
             result.SeccionId = zona.SeccionId;

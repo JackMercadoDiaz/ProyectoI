@@ -38,13 +38,13 @@ public class ResturanteDbContext : DbContext
         );
 
         modelBuilder.Entity<Mesa>().HasData(
-            new Mesa { Id = 1, ZonaId = 1, NumMesa = 1, Capacidad = 4, Estado = "Disponible" },
-            new Mesa { Id = 2, ZonaId = 1, NumMesa = 2, Capacidad = 7, Estado = "Disponible" },
-            new Mesa { Id = 3, ZonaId = 2, NumMesa = 3, Capacidad = 6, Estado = "Disponible" },
+            new Mesa { Id = 1, ZonaId = 1, NumMesa = 1, Capacidad = 4, Estado = "En Mantenimiento" },  // bloqueada por bloqueo 1
+            new Mesa { Id = 2, ZonaId = 1, NumMesa = 2, Capacidad = 7, Estado = "En Mantenimiento" },  // bloqueada por bloqueo 2
+            new Mesa { Id = 3, ZonaId = 2, NumMesa = 3, Capacidad = 6, Estado = "En Mantenimiento" },  // afectada por bloqueo 3 (zona 2)
             new Mesa { Id = 4, ZonaId = 2, NumMesa = 4, Capacidad = 3, Estado = "Disponible" },
             new Mesa { Id = 5, ZonaId = 1, NumMesa = 5, Capacidad = 5, Estado = "Disponible" },
             new Mesa { Id = 6, ZonaId = 1, NumMesa = 6, Capacidad = 4, Estado = "Disponible" },
-            new Mesa { Id = 7, ZonaId = 2, NumMesa = 7, Capacidad = 16, Estado = "Disponible" },
+            new Mesa { Id = 7, ZonaId = 2, NumMesa = 7, Capacidad = 16, Estado = "En Mantenimiento" }, // afectada por bloqueo 3 (zona 2)
             new Mesa { Id = 8, ZonaId = 3, NumMesa = 8, Capacidad = 4, Estado = "Disponible" }
         );
 
@@ -65,9 +65,9 @@ public class ResturanteDbContext : DbContext
         );
 
         modelBuilder.Entity<Bloqueo>().HasData(
-            new Bloqueo { Id = 1, ZonaId = 1, MesaId = 1, FechaInicio = DateTime.Today.AddDays(1), FechaFin = DateTime.Today.AddDays(2), Estado = "Activo", Motivo = "Mantenimiento" },
-            new Bloqueo { Id = 2, ZonaId = 1, MesaId = 2, FechaInicio = DateTime.Today.AddDays(3), FechaFin = DateTime.Today.AddDays(4), Estado = "Activo", Motivo = "Evento Privado" },
-            new Bloqueo { Id = 3, ZonaId = 2, MesaId = 3, FechaInicio = DateTime.Today.AddDays(5), FechaFin = DateTime.Today.AddDays(6), Estado = "Activo", Motivo = "Mantenimiento" }
+            new Bloqueo { Id = 1, MesaId = 1, ZonaId = null, FechaInicio = DateTime.Today.AddDays(1), FechaFin = DateTime.Today.AddDays(2), Estado = "Activo", Motivo = "Mantenimiento" },
+        new Bloqueo { Id = 2, MesaId = 2, ZonaId = null, FechaInicio = DateTime.Today.AddDays(3), FechaFin = DateTime.Today.AddDays(4), Estado = "Activo", Motivo = "Evento Privado" },
+        new Bloqueo { Id = 3, MesaId = null, ZonaId = 2, FechaInicio = DateTime.Today.AddDays(5), FechaFin = DateTime.Today.AddDays(6), Estado = "Activo", Motivo = "Mantenimiento" }
         );
 
         modelBuilder.Entity<ListaDeEspera>().HasData(

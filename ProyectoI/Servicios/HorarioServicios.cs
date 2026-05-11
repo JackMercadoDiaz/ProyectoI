@@ -24,19 +24,6 @@ namespace ProyectoI.Servicios
             return result;
         }
 
-        public Horario CreateHorario(string nombre, string diaSemana, TimeOnly horaInicio, TimeOnly horaFin)
-        {
-            var result = new Horario
-            {
-                Nombre = nombre,
-                DiaSemana = diaSemana,
-                HoraInicio = horaInicio,
-                HoraFin = horaFin
-            };
-             _RestauranteDbcontext.Horarios.Add(result);
-             _RestauranteDbcontext.SaveChanges();
-             return result;
-        }
 
         public string ValidarHorario(DateTime fecha, int horarioId)
         {

@@ -55,6 +55,10 @@ namespace ProyectoI.Servicios
 
         public Bloqueo CreateBloqueoZona(BloqueoZonaDto dto)
         {
+            var zonaExiste = _RestauranteDbcontext.Zonas.Any(z => z.Id == dto.ZonaId);
+            if (!zonaExiste)
+                throw new Exception("La zona no existe");
+
             var mesas = _RestauranteDbcontext.Mesas
                 .Where(mesa => mesa.ZonaId == dto.ZonaId)
                 .ToList();

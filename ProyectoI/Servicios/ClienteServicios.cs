@@ -27,11 +27,13 @@ namespace ProyectoI.Servicios
         public void DeleteCliente(int clienteId)
         {
             var result = _RestauranteDbcontext.Clientes.Find(clienteId);
-            if (result != null)
-            {
-                _RestauranteDbcontext.Clientes.Remove(result);
-                _RestauranteDbcontext.SaveChanges();
-            }
+
+            if (result == null)
+                throw new Exception("Cliente no encontrado");
+
+             _RestauranteDbcontext.Clientes.Remove(result);
+             _RestauranteDbcontext.SaveChanges();
+            
         }
 
         public List<Cliente> GetAllClientes()

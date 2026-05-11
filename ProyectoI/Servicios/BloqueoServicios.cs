@@ -82,38 +82,32 @@ namespace ProyectoI.Servicios
             return bloqueo;
         }
 
-        public Bloqueo DeleteBloqueoMesa(int bloqueoId)
+        public Bloqueo DeleteBloqueo(int bloqueoId)
         {
             var bloqueo = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
-            if (bloqueo == null) if (bloqueo == null)
+            if (bloqueo == null)
                 throw new Exception("Bloqueo no encontrado");
 
-            var mesa = _RestauranteDbcontext.Mesas.Find(bloqueo.MesaId);
-            if (mesa != null) mesa.Estado = "Disponible";
-
-            _RestauranteDbcontext.Bloqueos.Remove(bloqueo);
-            _RestauranteDbcontext.SaveChanges();
-            return bloqueo;
-        }
-
-        public Bloqueo DeleteBloqueoZona(int bloqueoId)
-        {
-            var bloqueo = _RestauranteDbcontext.Bloqueos.Find(bloqueoId);
-            if (bloqueo == null) if (bloqueo == null)
-                throw new Exception("Mesa no encontrada");
-
-            var mesas = _RestauranteDbcontext.Mesas
-                .Where(mesa => mesa.ZonaId == bloqueo.ZonaId)
-                .ToList();
-
-            foreach (var mesa in mesas)
+            if (bloqueo.MesaId != null)
             {
-                mesa.Estado = "Disponible";
+                var mesa = _RestauranteDbcontext.Mesas.Find(bloqueo.MesaId);
+                if (mesa != null) mesa.Estado = "Disponible";
+            }
+            else if (bloqueo.ZonaId != null)
+            {
+                var mesas = _RestauranteDbcontext.Mesas
+                    .Where(mesa => mesa.ZonaId == bloqueo.ZonaId)
+                    .ToList();
+
+                foreach (var mesa in mesas)
+                {
+                    mesa.Estado = "Disponible";
+                }
             }
 
             _RestauranteDbcontext.Bloqueos.Remove(bloqueo);
             _RestauranteDbcontext.SaveChanges();
-            return bloqueo;  
+            return bloqueo;
         }
 
         public bool VerificarBloqueo(int mesaId, DateTime fechaHora)

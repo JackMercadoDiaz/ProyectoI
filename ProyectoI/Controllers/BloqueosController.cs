@@ -56,21 +56,12 @@ namespace ProyectoI.Controllers
             return result;
         }
 
-
-        // DELETE api/<BloqueosController>/mesa/{id}
-        [HttpDelete("mesa/{id}")]
-        public Bloqueo DeleteMesa(int id)
+        [HttpDelete("{id}")]
+        public Bloqueo Delete(int id)
         {
-            var result = _bloqueoService.DeleteBloqueoMesa(id);
-            return result;
+            return _bloqueoService.DeleteBloqueo(id);
         }
 
-        // DELETE api/<BloqueosController>/zona/{id}
-        [HttpDelete("zona/{id}")]
-        public Bloqueo DeleteZona(int id)
-        {
-            var result = _bloqueoService.DeleteBloqueoZona(id);
-            return result;
-        }
+
     }
 }

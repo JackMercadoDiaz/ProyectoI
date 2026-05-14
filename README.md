@@ -54,4 +54,4 @@ El sistema maneja 8 entidades principales con sus relaciones:
 
 ## Licencia
 
-Proyecto académico desarrollado para EIF 201 Programación II.
+Proyecto académico desarrollado para EIF 204 Programación II.

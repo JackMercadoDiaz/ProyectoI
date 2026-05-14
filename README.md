@@ -1,6 +1,6 @@
 # Sistema de Reservas - API Restaurante
 
-**Proyecto I - EIF 201 Programación II**  
+**Proyecto I - EIF 204 Programación II**  
 Universidad Nacional de Costa Rica - Sede Regional Chorotega, Campus Nicoya  
 I Ciclo 2026
 
